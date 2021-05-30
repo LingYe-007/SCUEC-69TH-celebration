@@ -1,0 +1,17 @@
+<!--pages/contact/contact.wxml-->
+<text class="title">联系我们</text>
+<view class="content">
+<text>曾经有一个没有bug的小程序在我面前</text>
+<text>我没有珍惜</text>
+<text>直到我失去的时候</text>
+<text>才追悔莫及</text>
+<text>美好的东西总是像泡沫一样易碎</text>
+<text>人间最痛苦的事情莫过于此</text>
+<text>如果上天能给我一次再来的机会</text>
+<text>我一定不会放过每一个bug</text>
+<text>请帮助我们：</text>
+<view style="white-space:pre-wrap;position:relative;top:0vh">
+  <text class="t1">QQ:892104576</text>
+  <text class="t1">E-mail:newthread-geek@outlook.com</text>
+</view>
+</view>

@@ -1,0 +1,92 @@
+
+<!-- <view class="all">
+<view class="total">
+<text class="t1">国家/地区</text>
+<text class="t2">点亮数量</text>
+</view>
+</view> -->
+<!-- <button class="return" bindtap="f2">返回</button> -->
+
+
+
+  <view style="background-image: url('https://img.nt-geek.club/xiaoyou.png'); background-repeat: no-repeat;background-size:100% 100%;display: flex;align-items:Center;height:100vh;flex-direction: column;width:100vw;">
+  <view class="meiyihang" style="top:5.5vh;position:absoute;">
+    <text class="wenzi1">中国</text>
+    <text class="wenzi2" bindtap="f1" wx:if="{{xianshi}}"> 收起</text>
+  <text class="wenzi2" bindtap="f1" wx:else>展开 </text>
+
+  </view>
+  
+<scroll-view  scroll-y="true"  style="height:25vh;position:relative;top:5vh;width: 500rpx;display:{{chinadisplay}};">
+  
+  <view  >
+  <block wx:for="{{chinalist}}" wx:if="{{xianshi}}"  wx:key="index" >
+  <view class="meiyihang">
+  
+    <text class="wenzi1">{{item.country}}</text>
+    <text class="wenzi2"> {{item.score}}</text>
+
+  </view>
+ 
+</block>
+</view>
+</scroll-view>
+<scroll-view  scroll-y="true"  style="height:25vh;position:relative;top:8vh;width: 500rpx;">
+  
+  <view>
+  <block wx:for="{{otherlist}}"   wx:key="index" >
+  <view class="meiyihang">
+  
+    <text class="wenzi1">{{item.country}}</text>
+    <text class="wenzi2"> {{item.score}}</text>
+
+  </view>
+ 
+</block>
+</view>
+</scroll-view>
+</view>
+<!--
+<view class="meiyihang" style="top:5.5vh;">
+  
+  <text class="wenzi1">美国</text>
+  <text class="wenzi2" bindtap="f3" wx:if="{{meiguo}}"> 收起</text>
+  <text class="wenzi2" bindtap="f3" wx:else>展开 </text>
+</view>
+
+<scroll-view  scroll-y="true"  style="height:300px;position:relative;top:6vh;width: 500rpx;display:{{meiguodisplay}};">
+
+<view  >
+<block wx:for="{{meiguolist}}" wx:if="{{meiguo}}"  wx:key="index" >
+<view class="meiyihang">
+
+  <text class="wenzi1">{{item.county}}</text>
+  <text class="wenzi2"> {{item.score}}</text>
+
+</view>
+
+</block>
+</view>
+</scroll-view>
+<view class="meiyihang" style="top:5.5vh;">
+  
+  <text class="wenzi1">美国</text>
+  <text class="wenzi2">1123</text>
+
+</view>
+<view class="meiyihang" style="top:6vh;">
+  
+  <text class="wenzi1">日本</text>
+  <text class="wenzi2">521</text>
+
+</view>
+-->
+<!-- <view style="bottom:3vh;position:absolute;">
+  <text style="display:block;text-align:center;color:#79664d">声明：</text>
+  <text style="color:#79664d">由于地图精细度不够，南海诸岛里的小岛无法地图上显示，但我们技术团队始终坚持中国领土完整原则，在这里我们深感抱歉，后期会尽全力完善地图精细度。</text>
+</view> -->
+
+<!-- <button  bindtap="f2" style="bottom:0px;position:absolute;height:40px;align-items:Center;flex-direction: column;">返回</button> -->
+
+
+  

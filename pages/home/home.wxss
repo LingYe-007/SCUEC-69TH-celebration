@@ -1,0 +1,95 @@
+page{background-image: url('https://img.nt-geek.club/xiaoyou.png'); background-repeat: no-repeat;background-size:100% 100%; flex-direction: row-reverse;}
+.danmu{ 
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+}
+.map{position: relative; top: 0vh;}
+/*.map1{position: relative;top: 18rpx;}*/
+.zhuangshi{
+  width: 40.5rpx;
+  height: 40.5rpx;
+  background-color:rgb(255, 255, 255);
+  border-radius: 100%;
+}
+.ta1 text{display: flex;align-items: center;text-align: center;position: relative;top: 3vh;}
+.ta1{width: 100vw;height: 10vh;position: fixed;top:3vh;}
+.d1{background-color: rgb(244, 244, 244);height: 40.5rpx;width: 390rpx;border-radius: 30rpx;position: relative;top:60rpx;}
+.bk{background-color: rgb(255, 255, 255);width: 210rpx;height: 210rpx;border-radius: 100%;text-align: center;}
+.danmu text{position: relative;top: -40.5rpx;left: 80rpx;color: rgb(151,151, 151)}
+.all{width: 100vw;height: 100vh;}
+.t1{display: flex;justify-content: center;position: relative;top: 32vh;font-family:Arial, Helvetica, sans-serif;color: rgb(142,142,142);}
+.img1{position: fixed;left: 45vw;z-index:901;bottom:3vh;z-index: 1000;}
+.img2{position: fixed;top:88vh;left: 41.1vw;z-index:901;width: 20.2vw;height: 20vw;}
+#gif{position: fixed;left:35.3vw;z-index: 901;}
+.hah{position:fixed;top: 70vh;
+  
+  border: none;
+  margin: 0 auto;
+  font-size: 35rpx;
+  white-space:nowrap;width:9vw;height: 16vh;background-color:rgba(0,0,0,0.18);display: flex;align-items: center;color:rgb(252,252,252); margin: 0 auto;
+  text-align: center;
+  justify-content: center; 
+  writing-mode: vertical-lr;/*从左向右 从右向左是 writing-mode: vertical-rl;*/  
+  writing-mode: tb-lr; z-index: 1000;}
+.music{
+  width: 20vw;
+  height: 20vw;
+  position: fixed;
+  top:20vh;
+  
+  z-index: 9999;
+}
+
+.on{
+  animation:rotating 2.5s linear infinite;
+}  
+
+@keyframes rotating{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+
+
+
+
+/**index.wxss**/
+.button{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.aon{
+position: absolute;
+white-space:nowrap;/* 防止向下换行*/
+}
+.doommview{
+  z-index: 3000;
+  height: 30vh;
+  width: 100vw;
+  position: absolute;
+
+}
+.danmukuang{
+
+  height:22px;
+ border-style:none;
+display:flex;
+align-items:center; /*实现垂直居中*/
+  justify-content: center;/*实现水平居中*/
+  border-radius: 20px;
+  position: absolute;
+white-space:nowrap;/* 防止向下换行*/
+font-size: 12px;
+padding:0px;
+padding-left:15px;
+padding-right:15px;
+background-color: rgba(255,255,255,0.5);
+}
+/**定义从右边向左边的移动的动画**/
+@keyframes first{
+  from{left:100%; }
+  to{left: -100%;}
+}
+.total{position:fixed;bottom: 16vh;right: 8vw;color: rgb(142,142,142);flex-direction: column;}
+.img_last{width: 5vw;height: 5vw;position: relative;top:0.7vh}

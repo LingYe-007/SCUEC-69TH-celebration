@@ -1,0 +1,60 @@
+.icon{
+  width: 100rpx;
+  height:90rpx;
+}
+.tabbar {
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  bottom:0;
+  padding:10rpx;
+  background:rgb(252, 252,252);
+  font-size:20rpx;
+  height: 15vw;
+  z-index: 300;
+}
+.tabbar-item{
+  float: flex;
+  width: 25%;
+  height: auto;
+  position: relative;
+  left: 100rpx;
+  overflow: hidden;
+  text-align: center;
+  top:30rpx;
+}
+.tabbar-item:nth-child(2){
+  position: relative;
+   top: -100rpx;
+  height:300rpx;
+  flex: 0.7;
+}
+.tabbar-item:nth-child(3){
+width: 27%;}
+.tabbar-item:nth-child(2) .tabbar-item-icon image{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: -1px;
+  width: 30.5vw;
+  height: 250rpx;
+  left: 35.6vw;
+  z-index: 0;
+}
+
+.tabbar-item:nth-child(1) .tabbar-item-icon image{
+  position: relative;
+  top:-25rpx;
+  left: -60rpx;
+  width: 120rpx;
+  height: 130rpx;
+}
+.tabbar-item:nth-child(3) .tabbar-item-icon image{
+  position: relative;
+  top: -15rpx;
+  left: -40rpx;
+  width: 115rpx;
+  height: 115rpx;
+  background-color: rgb(252,252,252);
+}
+.tam{width: 8.5vw;height: 3vh;background-color: rgb(252,252,252);bottom: 13.8vw;position:fixed;left: 47vw;z-index: 1;border-radius: 60%;}

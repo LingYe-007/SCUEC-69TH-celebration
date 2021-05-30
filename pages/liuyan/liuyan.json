@@ -1,0 +1,15 @@
+{
+  "navigationStyle":"custom",
+  "enablePullDownRefresh": true,
+  "usingComponents": {  "tabbar":"../../component/tab"},
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "default",
+    "onReachBottomDistance":40
+  }
+}

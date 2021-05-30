@@ -1,0 +1,32 @@
+
+<!--pages/city/city.wxml-->
+<view class="cityBox">
+    <view class="search-city">
+        <input  disabled="disabled" placeholder="请选择目前所在的位置" value="{{searchValue}}" bindinput="getCity" auto-focus />
+        <button plain="true" bindtap="chooseCity">确定</button>
+    </view>
+    <view class="content">
+        <view class="all-city">
+            <view class="city" bindtap="set1" id="中国" style="font-size:35rpx;">中国</view>
+            <scroll-view class="city-scroll" scroll-y="true" scroll-with-animation="true" scroll-into-view="{{toView}}">
+                <view class="city-list">
+                    <!-- 循环城市列表 start -->
+                    <view  wx:for="{{cityList}}" wx:key="{{index}}" id="{{'city'+index}}" bindtap='selectcity' data-title="{{item.title}}">
+                        <view class="nav-text"> 
+                            <text>{{item.title}}</text>
+                        </view>               
+                        <view class="show-city">
+                            <text class="ct" wx:for="{{item.lists}}" wx:key="{{index}}" bindtap="set" id="{{value}}"wx:for-item="value"style="font-size:32rpx;margin:1vw ">{{value}}</text>
+                        </view>
+                    </view>
+                    <!-- 循环城市列表 end -->
+                </view>  
+            </scroll-view>
+        </view>
+        <!-- 字母索引 start -->
+        <view class="search-nav"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+            <text bindtap="cityScroll" data-index="{{index}}" wx:for="{{searchNav}}" wx:key="{{index}}" class="zz">{{item}}</text>
+        </view>
+        <!-- 字母索引 end -->
+    </view>
+</view>

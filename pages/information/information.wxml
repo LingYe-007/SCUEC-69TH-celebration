@@ -1,0 +1,23 @@
+<tabbar activeIdx="{{activeIdx}}"></tabbar>
+<view class="content">
+  <view class="nav">
+    <open-data type="userAvatarUrl" id="userinfo" style="width:180rpx;height:180rpx;border-radius:100%"></open-data></view>
+  <view class="all">
+  <view class="inputvalue">
+<text class="t1">姓名</text><input class="input" name="user" placeholder="输入姓名" value="{{userName}}" bindblur="storage"/></view>
+<view class="inputvalue1"><text class="t1">学号</text><input class="input" placeholder="输入学号或工号(选填)" value="{{usernumber}}" bindblur="uNumber" /></view>
+<view class="picker">
+<view class="picker2"><picker  value="{{college}}" range="{{array1}}" class="br" bindchange="try"><text class="t1" >学院</text><text class="ui-picker-detai">{{array1[college]}}</text></picker></view>
+<view class="picker1"><text class="t1">坐标</text><text style="font-size:30rpx;" id="cty1" >{{country}}</text><image src="../../images/arrow.png" style="width:8vw;height:8vw" class="ctry" bindtap="cn"></image></view>
+<view class="picker3" wx:if="{{arq}}"><text class="t1">地区</text> <picker bindchange="changeRegin" mode = "region" value="{{region}}">
+    <view class="tui-picker-detail">{{region[0]}}  {{region[1]}}-{{region[2]}}</view>
+  </picker></view>
+</view>
+<text class="t7" style="white-space:pre-wrap;">*教职工可在学院一栏选取“教职工”类别
+*学号可选填</text>
+</view>
+<view class="information_btn">
+<button class="btn" bindtap="f1" ><text id='t1'>保存信息</text></button>
+<button class="btn" bindtap="fm">更换民大专属头像</button>
+</view>
+</view>

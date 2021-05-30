@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/information/information",    
+    "pages/home/home", 
+    "pages/zhuye/zhuye",
+    
+
+    "pages/liuyan/liuyan",
+    "pages/contact/contact",
+    "pages/about/about",
+    "pages/fenbu/fenbu",
+    "pages/country/country" ],
+  "requiredBackgroundModes": ["audio", "location"],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F7F7F7",
+    "navigationBarTitleText": "星火民大，点亮中华",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/liuyan/liuyan",
+        "text": "首页",
+        "iconPath": "/images/talk.png",
+        "selectedIconPath": "/images/talk1.png",
+        "auth": 0
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "发现",
+        "iconPath": "/images/light.png",
+        "selectedIconPath": "/images/light.png",
+        "auth": 0
+      },
+      {
+        "pagePath": "pages/information/information",
+        "text": "项目对接",
+        "iconPath": "/images/people.png",
+        "selectedIconPath": "/images/people1.png",
+        "auth": 0
+      }]
+  }
+    
+  }
+

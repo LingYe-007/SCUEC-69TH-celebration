@@ -1,0 +1,43 @@
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(247,247,247);
+}
+
+.all{display: flex;flex-direction: column;position: relative;top:-12vh;}
+.inputvalue{display:flex;flex-direction: row;justify-content: center;background-color: rgb(255,255,255);padding-top: 1vh ;padding-bottom: 1.8vh;height:3vh;position: relative;font-size:30rpx;}
+.inputvalue1{display: flex;flex-direction: row;justify-content: center;background-color: rgb(255,255,255);padding-top: 1.8vh ;padding-bottom: 1.8vh;height:3vh;position: relative;font-size: 30rpx;width: 100vw;}
+.content{width: 100vw;height: 80vh;display: flex; flex-direction: column;justify-content: center;align-items: center;position: relative;top:10vh}
+.picker1{display: flex;flex-direction: row;width: 100vw;justify-content: center;padding-top:2vh;padding-bottom: 1.5vh;align-items: center;margin-top: 5vh;}
+.picker2{display: flex;flex-direction: row;width: 100vw;align-items: center;position: absolute;}
+.br{position: absolute;top: 1vh;}
+.picker{background-clip: padding-box;position: relative;background-color: rgb(255,255,255);top: 1.8vh;}
+.nav{overflow: hidden;width: 180rpx;height: 180rpx;border-radius: 50%;position: relative;top:-17vh; }
+.t1{font-size: 35rpx;position: absolute; left: 2vw;white-space:nowrap;}
+.ctry{position: relative;left: 42vw;}
+.picker3{display: flex;flex-direction: row;width: 100vw;justify-content: center;padding-top:0.5vh;padding-bottom: 1.5vh;align-items: center;height: 4.5vh;position: relative;}
+.btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color:rgb(28,188,156);
+  font-weight: bolder;
+  width: 380rpx;
+  height: 90rpx;
+  font-size: 35rpx;
+  margin: 1.5vh;
+}
+.input{display: flex; justify-content: center;align-items: center;left: 21.6vw;position: absolute;}
+#cty1{position: absolute;left:21.6vw;font-size: 30rpx;}
+.tui-picker-detail{position: absolute;left: 21.6vw;top:1.2vh;font-size: 30rpx;}
+.ui-picker-detai{position: absolute;left:21.6vw;top:0.5vh;white-space:nowrap;font-size: 30rpx;}
+.ui-picker-detai::after{content: "";position: absolute;width: 100vw;height: 5vh;top:0;left: 0;}
+.tui-picker-detail::after{content: "";position: absolute;width:100vw;height: 5vh;top:0;left: 0;}
+#t3{position: relative;left: 5vw;}
+picker{background-clip: padding-box; }
+.btn .t1{font-size: 50rpx;}
+.information_btn{position: fixed;bottom: 17vh;}
+.t7{color:rgb(119,119,119) ;position: relative;margin-top: 4vh;font-size: 25rpx;left: 2vw;}
