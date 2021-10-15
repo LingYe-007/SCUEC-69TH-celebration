@@ -2,10 +2,12 @@
 <!-- <view class='ta1'>
   <text>中南民族大学69周年快乐！</text>
   <!-- <image src="../../images/home.png" style="height:7vw;width:7vw;top:6vh;position:fixed;left:3vw" bindtap="goback"></image> -->
-<view class="cr" >
+<view class="cr">
   <button class="button1" bindtap="f1" hover-class="bg_color">民大专属头像</button>
-    <button class="button2" bindtap="f2" hover-class="bg_color">星火民大2020</button>
+  <button class="button2" bindtap="f2" hover-class="bg_color">星火民大2021</button>
 
-  </view>
-  <image src="../../images/about.png" style="height:10vw;width:10vw;" class="img3" bindtap="last"></image>
-<image src="../../images/youjian.png" style="height:10vw;width:10vw;" class="img4" bindtap="last1"></image>
+</view>
+<image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/person.png" style="height:10vw;width:10vw;" class="img3"
+  bindtap="last"></image>
+<image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/contact.png" style="height:10vw;width:10vw;"
+  class="img4" bindtap="last1"></image>

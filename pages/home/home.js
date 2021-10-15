@@ -1,200 +1,8 @@
 const app = getApp();
 const util = require("../../utils/util");
-import * as echarts from "../../ec-canvas/echarts"; //导入组件
-import geoJson from "./mapData.js"; //导入中国地图信息
-import WxCanvas from "../../ec-canvas/wx-canvas";
+
 var change = 1;
 var data = app.data3;
-var data=[{name: '海门', value: 9},
-{name: '鄂尔多斯', value: 12},
-{name: '招远', value: 12},
-{name: '舟山', value: 12},
-{name: '齐齐哈尔', value: 14},
-{name: '盐城', value: 15},
-{name: '赤峰', value: 16},
-{name: '青岛', value: 18},
-{name: '乳山', value: 18},
-{name: '金昌', value: 19},
-{name: '泉州', value: 21},
-{name: '莱西', value: 21},
-{name: '日照', value: 21},
-{name: '胶南', value: 22},
-{name: '南通', value: 23},
-{name: '拉萨', value: 24},
-{name: '云浮', value: 24},
-{name: '梅州', value: 25},
-{name: '文登', value: 25},
-{name: '上海', value: 25},
-{name: '攀枝花', value: 25},
-{name: '威海', value: 25},
-{name: '承德', value: 25},
-{name: '厦门', value: 26},
-{name: '汕尾', value: 26},
-{name: '潮州', value: 26},
-{name: '丹东', value: 27},
-{name: '太仓', value: 27},
-{name: '曲靖', value: 27},
-{name: '烟台', value: 28},
-{name: '福州', value: 29},
-{name: '瓦房店', value: 30},
-{name: '即墨', value: 30},
-{name: '抚顺', value: 31},
-{name: '玉溪', value: 31},
-{name: '张家口', value: 31},
-{name: '阳泉', value: 31},
-{name: '莱州', value: 32},
-{name: '湖州', value: 32},
-{name: '汕头', value: 32},
-{name: '昆山', value: 33},
-{name: '宁波', value: 33},
-{name: '湛江', value: 33},
-{name: '揭阳', value: 34},
-{name: '荣成', value: 34},
-{name: '连云港', value: 35},
-{name: '葫芦岛', value: 35},
-{name: '常熟', value: 36},
-{name: '东莞', value: 36},
-{name: '河源', value: 36},
-{name: '淮安', value: 36},
-{name: '泰州', value: 36},
-{name: '南宁', value: 37},
-{name: '营口', value: 37},
-{name: '惠州', value: 37},
-{name: '江阴', value: 37},
-{name: '蓬莱', value: 37},
-{name: '韶关', value: 38},
-{name: '嘉峪关', value: 38},
-{name: '广州', value: 38},
-{name: '延安', value: 38},
-{name: '太原', value: 39},
-{name: '清远', value: 39},
-{name: '中山', value: 39},
-{name: '昆明', value: 39},
-{name: '寿光', value: 40},
-{name: '盘锦', value: 40},
-{name: '长治', value: 41},
-{name: '深圳', value: 41},
-{name: '珠海', value: 42},
-{name: '宿迁', value: 43},
-{name: '咸阳', value: 43},
-{name: '铜川', value: 44},
-{name: '平度', value: 44},
-{name: '佛山', value: 44},
-{name: '海口', value: 44},
-{name: '江门', value: 45},
-{name: '章丘', value: 45},
-{name: '肇庆', value: 46},
-{name: '大连', value: 47},
-{name: '临汾', value: 47},
-{name: '吴江', value: 47},
-{name: '石嘴山', value: 49},
-{name: '沈阳', value: 50},
-{name: '苏州', value: 50},
-{name: '茂名', value: 50},
-{name: '嘉兴', value: 51},
-{name: '长春', value: 51},
-{name: '胶州', value: 52},
-{name: '银川', value: 52},
-{name: '张家港', value: 52},
-{name: '三门峡', value: 53},
-{name: '锦州', value: 54},
-{name: '南昌', value: 54},
-{name: '柳州', value: 54},
-{name: '三亚', value: 54},
-{name: '自贡', value: 56},
-{name: '吉林', value: 56},
-{name: '阳江', value: 57},
-{name: '泸州', value: 57},
-{name: '西宁', value: 57},
-{name: '宜宾', value: 58},
-{name: '呼和浩特', value: 58},
-{name: '成都', value: 58},
-{name: '大同', value: 58},
-{name: '镇江', value: 59},
-{name: '桂林', value: 59},
-{name: '张家界', value: 59},
-{name: '宜兴', value: 59},
-{name: '北海', value: 60},
-{name: '西安', value: 61},
-{name: '金坛', value: 62},
-{name: '东营', value: 62},
-{name: '牡丹江', value: 63},
-{name: '遵义', value: 63},
-{name: '绍兴', value: 63},
-{name: '扬州', value: 64},
-{name: '常州', value: 64},
-{name: '潍坊', value: 65},
-{name: '重庆', value: 66},
-{name: '台州', value: 67},
-{name: '南京', value: 67},
-{name: '滨州', value: 70},
-{name: '贵阳', value: 71},
-{name: '无锡', value: 71},
-{name: '本溪', value: 71},
-{name: '克拉玛依', value: 72},
-{name: '渭南', value: 72},
-{name: '马鞍山', value: 72},
-{name: '宝鸡', value: 72},
-{name: '焦作', value: 75},
-{name: '句容', value: 75},
-{name: '北京', value: 79},
-{name: '徐州', value: 79},
-{name: '衡水', value: 80},
-{name: '包头', value: 80},
-{name: '绵阳', value: 80},
-{name: '乌鲁木齐', value: 84},
-{name: '枣庄', value: 84},
-{name: '杭州', value: 84},
-{name: '淄博', value: 85},
-{name: '鞍山', value: 86},
-{name: '溧阳', value: 86},
-{name: '库尔勒', value: 86},
-{name: '安阳', value: 90},
-{name: '开封', value: 90},
-{name: '济南', value: 92},
-{name: '德阳', value: 93},
-{name: '温州', value: 95},
-{name: '九江', value: 96},
-{name: '邯郸', value: 98},
-{name: '临安', value: 99},
-{name: '兰州', value: 99},
-{name: '沧州', value: 100},
-{name: '临沂', value: 103},
-{name: '南充', value: 104},
-{name: '天津', value: 105},
-{name: '富阳', value: 106},
-{name: '泰安', value: 112},
-{name: '诸暨', value: 112},
-{name: '郑州', value: 113},
-{name: '哈尔滨', value: 114},
-{name: '聊城', value: 116},
-{name: '芜湖', value: 117},
-{name: '唐山', value: 119},
-{name: '平顶山', value: 119},
-{name: '邢台', value: 119},
-{name: '德州', value: 120},
-{name: '济宁', value: 120},
-{name: '荆州', value: 127},
-{name: '宜昌', value: 130},
-{name: '义乌', value: 132},
-{name: '丽水', value: 133},
-{name: '洛阳', value: 134},
-{name: '秦皇岛', value: 136},
-{name: '株洲', value: 143},
-{name: '石家庄', value: 147},
-{name: '莱芜', value: 148},
-{name: '常德', value: 152},
-{name: '保定', value: 153},
-{name: '湘潭', value: 154},
-{name: '金华', value: 157},
-{name: '岳阳', value: 169},
-{name: '长沙', value: 175},
-{name: '衢州', value: 177},
-{name: '廊坊', value: 193},
-{name: '菏泽', value: 194},
-{name: '合肥', value: 229},
-{name: '武汉', value: 273},
-{name: '大庆', value: 279}];
 var geoCoordMap = {
   海门: [121.15, 31.89],
   鄂尔多斯: [109.781327, 39.608266],
@@ -387,216 +195,7 @@ var geoCoordMap = {
   武汉: [114.31, 30.52],
   大庆: [125.03, 46.58], //绘制gps坐标，作用于散点图
 };
-// var that=this;
-// var data=that.data.data;
-// console.log(data)
-var convertData = function (data) {
-  //将坐标取到数组里
-  console.log(data);
-  var res = [];
-  for (var i = 0; i < data.length; i++) {
-    var geoCoord = geoCoordMap[data[i].address];
-    if (geoCoord) {
-      res.push({
-        name: data[i].address,
-        value: geoCoord.concat(data[i].star),
-      });
-    }
-  }
-  return res;
-};
-function randomData() {
-  return Math.round(Math.random() * 1000);
-} //随机生成数据，因为没有后台接口- -。
-function initChartMap(canvas, width, height, dpr) {
-  console.log(app.data3);
-  let myMap = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr,
-  }); //绘制地图入口函数
-  canvas.setChart(myMap);
-  echarts.registerMap("china", geoJson); // 绘制中国地图
 
-  const option = {
-    grid: {
-      height: 80,
-    },
-    tooltip: {
-      trigger: "item",
-      visibility: "off",
-      backgroundColor: "rgb(72,72,72)", //文本框的背景颜色
-      padding: [
-        //文本的位置
-        10, // 上
-        15, // 右
-        8, // 下
-        15, // 左
-      ],
-      extraCssText: "box-shadow: 1px 1px 10px rgba(21, 126, 245, 0.35);", //文本框
-      textStyle: {
-        ////点击后出现的文本的样式
-        fontFamily: "'Microsoft YaHei', Arial, 'Avenir', Helvetica, sans-serif",
-        position: "right",
-        formatter: "{parseInt(b)}",
-        color: "rgb(255,255,255)",
-        fontSize: 12,
-      },
-      //点击后出现的文本
-    },
-    geo: [
-      {
-        // 地理坐标系组件
-        map: "china",
-        roam: true, // 可以缩放和平移
-        zoom: 1.2,
-        scaleLimit: {
-          //滚轮缩放的极限控制
-          min: 0.6,
-          max: 2.4,
-        },
-        aspectScale: 0.8, // 比例true
-        layoutCenter: ["50%", "55%"], //中心的position位置
-        layoutSize: 420, // 地图大小
-        label: {
-          // 图形上的文本标签
-          normal: {
-            show: false,
-            textStyle: {
-              color: "#000000",
-              fontSize: "14",
-            },
-          },
-        },
-        emphasis: {
-          z: 1000, // 高亮时的地图上的文本样式
-          label: {
-            z: 100,
-            color: "#000000",
-            show: true, //选中状态是否显示省份名称
-          },
-        },
-
-        itemStyle: {
-          // 图形上的地图区域
-          normal: {
-            areaColor: "rgb(247,246,240)",
-            borderColor: "#E7C9AF", //整个地图的颜色
-          },
-          emphasis: { areaColor: "rgb(144,204,203)" },
-        },
-      },
-    ],
-    visualMap: {
-      show: true,
-      // 指定 visualMapContinuous 组件的允许的最小值。'min' 必须用户指定。[visualMap.min, visualMax.max] 形成了视觉映射的『定义域』。
-      // 指定 visualMapContinuous 组件的允许的最大值
-      // 两端的文本，如 ['High', 'Low'] 如例子：http://www.echartsjs.com/gallery/editor.html?c=doc-example/map-visualMap-continuous-text&edit=1&reset=1
-      realtime: false, // 拖拽时，是否实时更新。
-      calculable: false, // 是否显示拖拽用的手柄（手柄能拖拽调整选中范围）。
-      buttom: "20",
-      padding: 40,
-      itemHeight: 0,
-      hoverLink: false, // 打开 hoverLink 功能时，鼠标悬浮到 visualMap 组件上时，鼠标位置对应的数值 在 图表中对应的图形元素，会高亮。
-      inRange: {
-        color: [" rgb(144,204,203)", "rgb(144,204,203)"],
-      },
-    },
-
-    // data:citydata
-
-    series: [
-      {
-        type: "map",
-        mapType: "china",
-        geoIndex: 0,
-        roam: false, // 鼠标是否可以缩放
-        scaleLimit: {
-          //滚轮缩放的极限控制
-          min: 0.6,
-          max: 2,
-        },
-        label: {
-          normal: {
-            show: true,
-          },
-          itemStyle: {
-            color: "#000000",
-          },
-          emphasis: {
-            show: true,
-          },
-        },
-        type: "scatter", // series图表类型
-        coordinateSystem: "geo", // series坐标系类型
-        //设置弹窗数据，要从后台接入数据
-        large: true,
-        text: false,
-        symbolSize: function (val) {
-          if (val[2] < 80) return val[2] / 4;
-          else return 14;
-        },
-        data: convertData(app.data3),
-        label: {
-          color: "#CC00FF",
-          formatter: "{c}",
-          position: "right",
-          show: false,
-        },
-        itemStyle: {
-          color: "#CC00FF",
-        },
-      },
-      {
-        name: "Top 5",
-        type: "effectScatter",
-        coordinateSystem: "geo",
-        data: convertData(
-          app.data3
-            .sort(function (a, b) {
-              return b.star - a.star;
-            })
-            .slice(0, 5)
-        ),
-        encode: {
-          value: 2,
-        },
-        symbolSize: function (val) {
-          if (val[2] < 150) return val[2] / 8;
-          else return 18;
-        },
-        showEffectOn: "emphasis",
-        rippleEffect: {
-          brushType: "stroke",
-        },
-        hoverAnimation: true,
-        label: {
-          color: "#79664d",
-          formatter: "{b}",
-          position: "right",
-          show: true,
-        },
-        itemStyle: {
-          color: "#000000",
-          shadowColor: "#333",
-        },
-      },
-      {
-        type: "custom",
-        coordinateSystem: "geo",
-        itemStyle: {
-          opacity: 0.5,
-        },
-        animation: false,
-        silent: true,
-        data: [0],
-        z: 100,
-      },
-    ],
-  };
-  myMap.setOption(option);
-  return myMap;
-}
 var xx = "2";
 
 //index.js
@@ -619,31 +218,23 @@ class Doomm {
     this.id = i++;
   }
 }
-// 弹幕字体颜色
-/*
-function getRandomColor() {
-  let rgb = []
-  for (let i = 0; i < 3; ++i) {
-    let color = Math.floor(Math.random() * 256).toString(16)
-    color = color.length == 1 ? '0' + color : color
-    rgb.push(color)
-  }
-  return '#' + rgb.join('')
-}*/
 
 Page({
   data: {
     is: true,
-    ecMap: {
-      onInit: initChartMap,
-    },
     on: true,
+    value:false,
+    key: "D2QBZ-IXLKU-XLPV2-BSBRO-L7LI2-SVBMB",
     activeIdx: 1,
     ishide: false,
     cange: false,
     data: true,
     change: 1,
-    gurl: "../../images/xingxing.gif",
+    scale:3,
+    markers:null,
+    gurl: "https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/light.gif",
+    nowLatitude_x: 30.487114,
+    nowLatitude_y: 114.391799,
     doommData: [],
     doommData2: [],
     arr2: ["小塔", "小严", "Geek组", "柚子", "小何", "吹风机", "灵野", "深巷"],
@@ -687,7 +278,7 @@ Page({
     // })
     var that = this;
     wx.request({
-      url: "https://api.pomelo072.top/count/total",
+      url: "https://abc.mmyxyz.xyz/count/total",
       success: function (res) {
         that.setData({ total: res.data.Data.Star });
       },
@@ -727,13 +318,6 @@ Page({
         this.back.play(); // 开始播放
       }); // 开始播放
   },
-  /*
-  bindbt:function(){
-    doommList.push(new Doomm("这是我的弹幕",Math.ceil(Math.random()*100),Math.ceil(Math.random()*10)));
-    this.setData({
-      doommData : doommList
-    })
-  }*/
 
   /**
    * 页面的初始数据
@@ -775,7 +359,7 @@ Page({
         console.log(that.data.na);
         console.log(app.area);
         wx.request({
-          url: "https://api.pomelo072.top/stars/light",
+          url: "https://abc.mmyxyz.xyz/stars/light",
           data: {
             user_id: that.data.id,
             address: app.area,
@@ -837,9 +421,9 @@ Page({
   },
   onShow: function () {
     wx.request({
-      url: "https://api.pomelo072.top/stars/list",
+      url: "https://abc.mmyxyz.xyz/stars/list",
       success: function (res) {
-        data: res.Data;
+        markers: res.Data;
       },
     });
     // 获取BackgroundAudioManager 实例
@@ -850,7 +434,7 @@ Page({
     console.log("zhixing");
     laqushuju = setInterval(function () {
       wx.request({
-        url: "https://api.pomelo072.top/msg/list", //接口地址
+        url: "https://abc.mmyxyz.xyz/msg/list", //接口地址
         data: {
           type: "time",
           pages: pagecount,

@@ -9,7 +9,7 @@
 
 
 
-  <view style="background-image: url('https://img.nt-geek.club/xiaoyou.png'); background-repeat: no-repeat;background-size:100% 100%;display: flex;align-items:Center;height:100vh;flex-direction: column;width:100vw;">
+  <view style="background-image: url('https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/country.png'); background-repeat: no-repeat;background-size:100% 100%;display: flex;align-items:Center;height:100vh;flex-direction: column;width:100vw;">
   <view class="meiyihang" style="top:5.5vh;position:absoute;">
     <text class="wenzi1">中国</text>
     <text class="wenzi2" bindtap="f1" wx:if="{{xianshi}}"> 收起</text>

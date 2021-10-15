@@ -1,32 +1,34 @@
-                                                                                                                                                                                                                                                                  
 <view class="all">
-<tabbar activeIdx="{{activeIdx}}"></tabbar>
+    <tabbar activeIdx="{{activeIdx}}"></tabbar>
 
-<view class="doommview">
-  
-  <block wx:for="{{doommData}}" wx:key="id">
-      <view wx:if="{{item.display}}" class="danmukuang"  style="animation: first {{item.time}}s linear forwards;top:{{item.top}}%;color:{{item.color}};border-radius: 25px;width:{{item.text.length}}">
-      
-        
-          {{item.name}} ： {{item.text}}
-        
-     
+    <view class="doommview">
+
+        <block wx:for="{{doommData}}" wx:key="id">
+            <!-- <view wx:if="{{item.display}}" class="danmukuang"
+                style='animation: first {{item.time}}s linear forwards;top:{{item.top}}%;color:{{item.color}};border-radius: 25px;width:{{item.text.length}}'>
+                {{item.name}} ： {{item.text}}
+
+            </view> -->
+        </block>
+
     </view>
-    </block>
-    
+    <button bindtap="f6" class="hah">校友分布</button>
+    <map id="map" subkey="{{key}}" show-compass="{{value}}" longitude="{{nowLatitude_y}}" latitude="{{nowLatitude_x}}" scale="{{scale}}" marker='{{makers}}'></map>
+    <view class="map">
+        <text class="t1">中南民族大学生日快乐！</text>
+        <view class='music {{on? "on": ""}}'>
+            <image src='../../images/music.png' style='width: 20vw;height: 20vw;' bindtap='stop'></image>
+        </view>
+        <view>
+            <!-- <ec-canvas id="mychart-dom-map" canvas-id="mychart" ec="{{ ecMap }}" class="map1"></ec-canvas> -->
+            <image src="{{gurl}}" style="width: 31vw;height: 250rpx;bottom:-3rpx;" class="img" id="gif"
+                wx:if="{{ishide}}" bindtap="fn"></image>
+            <image src="../../images/lighted.png" class="img2" wx:if="{{cange}}"></image>
+            <image src="../../images/star.png" style="width:85rpx;height:98rpx;" class="img1" bindtap="f1"
+                value="{{change}}" wx:if="{{is}}"></image>
+        </view>
+    </view>
 </view>
-<button bindtap="f6" class="hah">校友分布</button>
-<view class="map" >
- <text class="t1">中南民族大学生日快乐！</text> 
- <view class='music {{on? "on": ""}}'>
-    <image src='../../images/music.png' style='width: 20vw;height: 20vw;' bindtap='stop'></image>
+<view class="total">
+    <image src="../../images/star1.png" class="img_last"></image>点星总量:{{total}}
 </view>
- <view> 
-<ec-canvas id="mychart-dom-map" canvas-id="mychart" ec="{{ ecMap }}" class="map1" ></ec-canvas>
-<image src="{{gurl}}" style="width: 31vw;height: 250rpx;bottom:-3rpx;" class="img" id="gif"  wx:if="{{ishide}}" bindtap="fn"></image>
-<image src="../../images/lighted.png" class="img2"  wx:if="{{cange}}" ></image>
-<image src="../../images/star.png" style="width:85rpx;height:98rpx;" class="img1" bindtap="f1" value="{{change}}" wx:if="{{is}}"></image>
-</view>
-</view>
-</view>
-<view class="total"><image src="../../images/star1.png" class="img_last"></image>点星总量:{{total}}</view>

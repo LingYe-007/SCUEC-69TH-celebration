@@ -1,15 +1,14 @@
 {
   "pages": [
-    "pages/information/information",    
-    "pages/home/home", 
-    "pages/zhuye/zhuye",
-    
-
+    "pages/information/information",
     "pages/liuyan/liuyan",
+    "pages/home/home",
+    "pages/zhuye/zhuye",
     "pages/contact/contact",
     "pages/about/about",
     "pages/fenbu/fenbu",
-    "pages/country/country" ],
+    "pages/country/country"
+  ],
   "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,8 +19,7 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "custom": true,
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/liuyan/liuyan",
         "text": "首页",
         "iconPath": "/images/talk.png",
@@ -41,8 +39,8 @@
         "iconPath": "/images/people.png",
         "selectedIconPath": "/images/people1.png",
         "auth": 0
-      }]
-  }
-    
+      }
+    ]
   }
 
+}

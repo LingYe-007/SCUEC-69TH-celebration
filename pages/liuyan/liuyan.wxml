@@ -2,38 +2,48 @@
 <tabbar activeIdx="{{activeIdx}}" wx:if="{{s2}}"></tabbar>
 <view class='ta1'>
   <text>星火民大，点亮中华</text>
-  <image src="../../images/home.png" style="height:7vw;width:7vw;top:6vh;position:fixed;left:6.8vw" bindtap="goback"></image>
+  <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/home.png" style="height:7vw;width:7vw;top:6vh;position:fixed;left:6.8vw" bindtap="goback">
+  </image>
 </view>
 <view class="tabbar1">
-<text id="b3">精彩留言</text>
-<button class='btn' id="b1" bindtap='f1' checked="checked" type="radio" style="background-color:{{current==index?'rgb(26, 188,156)':'rgb(247,247,247)'}};color:{{current==index?'rgb(255,255,255)':'rgb(41,41,41)'}}"><text>按热度</text></button>
-<button class='btn' id="b2" bindtap="f2" type="radio" style="background-color:{{current==1?'rgb(26, 188,156)':'rgb(247,247,247)'}};color:{{current==1?'rgb(255,255,255)':'rgb(41,41,41)'}}"><text>按时间</text></button>
-<scroll-view style="height:78vh;position:relative;top:5.5vh;" scroll-y="true"  bindscrolltoupper="refresh" refresher-triggered="{{triggered}}" bindscrolltolower="loadMore">
-  <view  style="text-align: center;" hidden="{{hideHeader}}">
-  
-  <view>刷新成功.....</view>
-</view>
-<view class="content">
-<block wx:for="{{current==0?list:list1}}" style="display:flex" class="liuinf" wx:key="index">
-  <view class="message_container">
-    <view class="cl" style="background-color:{{item1[item.college].value}}">{{item1[item.college].name}}</view>
-    <view class="message_username" >{{item.replyname}}</view>
-    <view class="message_time">{{item.replytime}}</view> 
-<view class="message_liken" >
-   <image src="{{current==0?imgurl[index].im:imgurl1[index].im}}" class="message_likeimg" bindtap="f5" data-id="{{index}}" value="{{[index]}}"></image>
-<text>{{item.replywell}}</text>
-</view>
-<view class="message_content">{{item.replymsg}}</view>
-</view>
-</block>
-</view>
-</scroll-view>
-<!-- <image src="../../images/about.png" style="height:6.8vw;width:6.8vw;" class="img3" bindtap="last"></image>
+  <text id="b3">精彩留言</text>
+  <button class='btn' id="b1" bindtap='f1' checked="checked" type="radio"
+    style="background-color:{{current==index?'#850000':'#F3EBEB'}};color:{{current==index?'rgb(255,255,255)':'rgb(41,41,41)'}}"><text>按热度</text></button>
+  <button class='btn' id="b2" bindtap="f2" type="radio"
+    style="background-color:{{current==1?'#850000':'#F3EBEB'}};color:{{current==1?'rgb(255,255,255)':'rgb(41,41,41)'}}"><text>按时间</text></button>
+  <scroll-view style="height:78vh;position:relative;top:5.5vh;" scroll-y="true" bindscrolltoupper="refresh"
+    refresher-triggered="{{triggered}}" bindscrolltolower="loadMore">
+    <view style="text-align: center;" hidden="{{hideHeader}}">
+
+      <view>刷新成功.....</view>
+    </view>
+    <view class="content">
+      <block wx:for="{{current==0?list:list1}}" style="display:flex" class="liuinf" wx:key="index">
+        <view class="message_container">
+          <view class="cl" style="background-color:{{item1[item.college].value}}">{{item1[item.college].name}}</view>
+          <view class="message_username">{{item.replyname}}</view>
+          <view class="message_time">{{item.replytime}}</view>
+          <view class="message_liken">
+            <image src="{{current==0?imgurl[index].im:imgurl1[index].im}}" class="message_likeimg" bindtap="f5"
+              data-id="{{index}}" value="{{[index]}}"></image>
+            <text>{{item.replywell}}</text>
+          </view>
+          <view class="message_content">{{item.replymsg}}</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <!-- <image src="../../images/about.png" style="height:6.8vw;width:6.8vw;" class="img3" bindtap="last"></image>
 <image src="../../images/youjian.png" style="height:6.8vw;width:6.8vw;" class="img4" bindtap="last1"></image> -->
-<view><image src="../../images/ly.png" style="width:11.5vw;height:11.5vw" class="ly" bindtap="liuyan"></image>
-</view>
-<view class="comment" style="buttom:{{buttom}}px" wx:if="{{show}}">
-<input value="{{comments}}" type="text" maxlength="50" class="commentsinput" placeholder="请输入评论（200字以内）" bindblur="cm1" bindfocus='onbindfocus' bindinput='changeBtnColor' focus="{{s1}}" id="cn" confirm-type="send"></input>
-<view class="com" bindblur="cm1" style="color:{{postBtnState ? 'rgb(26 155 103)' : 'rgb(26 155 103 / 32%)'}}">评论</view> 
-</view>
+  <view>
+    <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/asset/write.png" style="width:11.5vw;height:11.5vw"
+      class="ly" bindtap="liuyan"></image>
+  </view>
+  <view class="comment" style="buttom:{{buttom}}px" wx:if="{{show}}">
+    <input value="{{comments}}" type="text" maxlength="50" class="commentsinput" placeholder="请输入评论（200字以内）"
+      bindblur="cm1" bindfocus='onbindfocus' bindinput='changeBtnColor' focus="{{s1}}" id="cn"
+      confirm-type="send"></input>
+    <view class="com" bindblur="cm1" style="color:{{postBtnState ? 'rgb(133,0,0)' : 'rgb(133,0,0,0.4)'}}">评论
+    </view>
+  </view>
 </view>

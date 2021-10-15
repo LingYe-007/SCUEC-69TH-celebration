@@ -73,7 +73,7 @@ changeRegin(e){
     if((that.data.college!=""&&that.data.region[0]!=""&&that.data.userName!=""&&that.data.id!=""&&that.data.country=="中国")||(that.data.college!=""&&that.data.country!="中国"&&that.data.userName!=""&&that.data.id!="")){
  
     wx.request({
-      url: 'https://api.pomelo072.top/personal/edit',
+      url: 'https://abc.mmyxyz.xyz/personal/edit',
       method:"POST",
       data: {
         NATION:app.country,
@@ -133,7 +133,7 @@ changeRegin(e){
     wx.login({
       success (res) {
         wx.request({
-          url: 'https://api.pomelo072.top/stars/list',
+          url: 'https://abc.mmyxyz.xyz/stars/list',
           success:function(res){
             that.setData({data3:res.data.Data})
             app.data3=that.data.data3
@@ -142,7 +142,7 @@ changeRegin(e){
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'https://api.pomelo072.top/personal/login',
+            url: 'https://abc.mmyxyz.xyz/personal/login',
             data: {
               code: res.code,
             },
@@ -182,7 +182,7 @@ changeRegin(e){
             }
           })}}})
           // wx.request({
-          //   url: 'https://api.pomelo072.top/personal/info',
+          //   url: 'https://abc.mmyxyz.xyz/personal/info',
           //     data:{
           //     user_id:that.data.id
           //   },

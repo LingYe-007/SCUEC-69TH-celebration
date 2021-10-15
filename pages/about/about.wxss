@@ -1,9 +1,42 @@
 /* pages/about/about.wxss */
-page{background-image:url("http://img.nt-geek.club/xiaoyou.png");background-size:100% 100%;width: 100vw;height:100%;color: #79664d;}
-.content{justify-content: center;display: flex;font-weight: bolder;position: relative;top:3vh}
-.introduce{width: 80vw;margin: 0 auto;padding: 10rpx;}
-.shengming{width: 80vw;margin: 0 auto;padding: 10rpx;}
-.music{width: 80vw;margin: 0 auto;padding: 10rpx;}
-.open{width: 80vw;margin: 0 auto;padding: 10rpx;}
-.all{position: relative;top:4vh;}
-.t1{margin: 5rpx;}
+page {
+  background-image: url("https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/aboutus.png");
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100%;
+  color: #79664d;
+}
+.content {
+  justify-content: center;
+  display: flex;
+  font-weight: bolder;
+  position: relative;
+  top: 3vh;
+}
+.introduce {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 10rpx;
+}
+.shengming {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 10rpx;
+}
+.music {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 10rpx;
+}
+.open {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 10rpx;
+}
+.all {
+  position: relative;
+  top: 4vh;
+}
+.t1 {
+  margin: 5rpx;
+}

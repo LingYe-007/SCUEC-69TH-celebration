@@ -1,58 +1,58 @@
 /* pages/zhuye/zhuye.wxss    background-image:url('https://img.nt-geek.club/touxiangbackground.png'); background-size: 100% 100%; */
- page{background-image: url('https://img.nt-geek.club/touxiangbackground.png'); background-size: 100% 100%;background-repeat: no-repeat;  } 
-.button1{
-  border-radius:50px;
-  font-weight: 400;
-  background-color:#ffffff;
-  border: 25rpx;
-  width:200px;
-  height:45px;
-  color:#BBB09C;
-  display: flex;
-  justify-content: center;/*实现水平居中*/
-  align-items:center; /*实现垂直居中*/
-  top:27vh;
-  position: absolute;
-  
+page {
+  background-image: url("https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/main.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
-.button2{
-  border-radius:50px;
+.button1 {
+  border-radius: 50px;
   font-weight: 400;
- 
-  background-color:#ffffff;
+  background-color: #ffffff;
   border: 25rpx;
-  width:200px;
-  height:45px;
-  color:#BBB09C;
+  width: 200px;
+  height: 45px;
+  color: #850000;
   display: flex;
-  justify-content: center;/*实现水平居中*/
-  align-items:center; /*实现垂直居中*/
-  top:37vh;
+  justify-content: center; /*实现水平居中*/
+  align-items: center; /*实现垂直居中*/
+  top: 27vh;
   position: absolute;
 }
-.bg_color
-{
-  
-  background-color:#F2E9D9;
+.button2 {
+  border-radius: 50px;
+  font-weight: 400;
+
+  background-color: #ffffff;
+  border: 25rpx;
+  width: 200px;
+  height: 45px;
+  color: #850000;
+  display: flex;
+  justify-content: center; /*实现水平居中*/
+  align-items: center; /*实现垂直居中*/
+  top: 37vh;
+  position: absolute;
+}
+.bg_color {
+  background-color: #f2e9d9;
 }
 
-.cr{
+.cr {
   /* background-image: url('https://img.nt-geek.club/touxiangbackground.png'); background-size: 100% 100%;background-repeat: no-repeat;  */
-   display: flex;
-   justify-content:center;
-   position: relative;
-   top:5vh;
-   align-items:Center;
-   flex-direction: column;
-   height:90vh;
- 
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 5vh;
+  align-items: Center;
+  flex-direction: column;
+  height: 90vh;
 }
 .ta1 {
   width: 100vw;
   height: 10vh;
   position: fixed;
   top: 0vh;
-  background-color: rgb(247,247,247);
+  background-color: rgb(247, 247, 247);
 }
 .ta1 text {
   display: flex;
@@ -62,5 +62,13 @@
   position: relative;
   top: 5.5vh;
 }
-.img3{position: fixed;top:10vh;right: 4vw;}
-.img4{position: fixed;top:17vh;right: 4vw;}
+.img3 {
+  position: fixed;
+  top: 10vh;
+  right: 4vw;
+}
+.img4 {
+  position: fixed;
+  top: 17vh;
+  right: 4vw;
+}

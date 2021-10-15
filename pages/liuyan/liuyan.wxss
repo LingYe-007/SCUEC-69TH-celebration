@@ -80,8 +80,6 @@ text {
   border: 3rpx solid rgb(255, 255, 255);
   border-radius: 50rpx;
   box-sizing: border-box;
-
-
 }
 
 .cl {
@@ -94,7 +92,6 @@ text {
   line-height: 50rpx;
   text-align: center;
   font-size: 28rpx;
-
 }
 
 .message_username {
@@ -110,9 +107,10 @@ text {
 
 .message_likeimg {
   position: absolute;
-  height: 50rpx;
-  width: 50rpx;
-  right: 60rpx;
+  height: 30rpx;
+  width: 30rpx;
+  top: 9rpx;
+  right: 72rpx;
   display: inline-block;
   margin-right: 8rpx;
 }
@@ -147,9 +145,9 @@ text {
   font-size: 30rpx;
 }
 
-
-
 .ta1 text {
+  color: #850000;
+  font-weight: 600;
   display: flex;
   align-items: center;
   text-align: center;
@@ -206,7 +204,7 @@ text {
 }
 
 .tabbar {
-  height: 8.0vh;
+  height: 8vh;
 }
 
 .ly {
@@ -215,6 +213,16 @@ text {
   right: 8vw;
   top: 82vh;
 }
-.img3{position: fixed;top:6vh;left: 12vw;}
-.img4{position: fixed;top:6vh;left: 21vw;}
-picker{width: 100vw;}
+.img3 {
+  position: fixed;
+  top: 6vh;
+  left: 12vw;
+}
+.img4 {
+  position: fixed;
+  top: 6vh;
+  left: 21vw;
+}
+picker {
+  width: 100vw;
+}

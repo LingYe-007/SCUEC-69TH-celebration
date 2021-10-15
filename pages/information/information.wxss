@@ -23,7 +23,7 @@ page {
   align-items: center;
   justify-content: center;
   color: white;
-  background-color:rgb(28,188,156);
+  background-color:#850000;
   font-weight: bolder;
   width: 380rpx;
   height: 90rpx;

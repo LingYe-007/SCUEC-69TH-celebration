@@ -3,9 +3,9 @@
     "packOptions": {
         "ignore": []
     },
-    "proxy":{},
+    "proxy": {},
     "setting": {
-        "urlCheck": true,
+        "urlCheck": false,
         "es6": true,
         "enhance": true,
         "postcss": true,
@@ -40,7 +40,7 @@
         "showES6CompileOption": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.13.1",
+    "libVersion": "2.12.3",
     "appid": "wx0e6adec750e921cb",
     "projectname": "%E6%A0%A1%E5%BA%86",
     "debugOptions": {
