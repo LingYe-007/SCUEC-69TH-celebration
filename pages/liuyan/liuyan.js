@@ -6,6 +6,7 @@ Page({
    */
   data: {
     hideHeader: true,
+    loading: false,
     triggered: false,
     hideBottom: true,
     refreshTime: "", // 刷新的时间
@@ -22,38 +23,115 @@ Page({
     imgurl1: {},
     index: 0,
     pinglun: "",
-    item1: [
-      { name: "法学院", value: "#FFB6C1" },
-      { name: "文传院", value: "#FFA500" },
-      { name: "美院", value: "#e05297" },
-      { name: "民社院", value: "#E87A90" },
-      { name: "外院", value: "#fa7f72" },
-      { name: "经院", value: "#28abb9" },
-      { name: "管院", value: "#34626c" },
-      { name: "公管院", value: "#839b97" },
-      { name: "教院", value: "#5c6e91" },
-      { name: "马院", value: "#f05454" },
-      { name: "计科院", value: "#87CEFA" },
-      { name: "数统院", value: "#c3aed6" },
-      { name: "电信院", value: "#8bcdcd" },
-      { name: "生医院", value: "#b8de6f" },
-      { name: "化材院", value: "#aa3a3a" },
-      { name: "资环院", value: "#d2f5e3" },
-      { name: "生科院", value: "#9ad3bc" },
-      { name: "药院", value: "	#3CB371" },
-      { name: "预科院", value: "#d6d2c4" },
-      { name: "体院", value: "#FFB6C1" },
-      { name: "音舞院", value: "#fccbcb" },
-      { name: "继教院", value: "#686d76" },
-      { name: "中研院", value: "#34626c" },
-      { name: "研究生", value: "#87CEFA" },
-      { name: "国教院", value: "#d2f5e3" },
-      { name: "教职工", value: "#28abb9" },
+    item1: [{
+        name: "法学院",
+        value: "#FFB6C1"
+      },
+      {
+        name: "文传院",
+        value: "#FFA500"
+      },
+      {
+        name: "美院",
+        value: "#e05297"
+      },
+      {
+        name: "民社院",
+        value: "#E87A90"
+      },
+      {
+        name: "外院",
+        value: "#fa7f72"
+      },
+      {
+        name: "经院",
+        value: "#28abb9"
+      },
+      {
+        name: "管院",
+        value: "#34626c"
+      },
+      {
+        name: "公管院",
+        value: "#839b97"
+      },
+      {
+        name: "教院",
+        value: "#5c6e91"
+      },
+      {
+        name: "马院",
+        value: "#f05454"
+      },
+      {
+        name: "计科院",
+        value: "#87CEFA"
+      },
+      {
+        name: "数统院",
+        value: "#c3aed6"
+      },
+      {
+        name: "电信院",
+        value: "#8bcdcd"
+      },
+      {
+        name: "生医院",
+        value: "#b8de6f"
+      },
+      {
+        name: "化材院",
+        value: "#aa3a3a"
+      },
+      {
+        name: "资环院",
+        value: "#d2f5e3"
+      },
+      {
+        name: "生科院",
+        value: "#9ad3bc"
+      },
+      {
+        name: "药院",
+        value: "	#3CB371"
+      },
+      {
+        name: "预科院",
+        value: "#d6d2c4"
+      },
+      {
+        name: "体院",
+        value: "#FFB6C1"
+      },
+      {
+        name: "音舞院",
+        value: "#fccbcb"
+      },
+      {
+        name: "继教院",
+        value: "#686d76"
+      },
+      {
+        name: "中研院",
+        value: "#34626c"
+      },
+      {
+        name: "研究生",
+        value: "#87CEFA"
+      },
+      {
+        name: "国教院",
+        value: "#d2f5e3"
+      },
+      {
+        name: "教职工",
+        value: "#28abb9"
+      },
     ],
     arr: [],
     arr1: [],
     postBtnState: false, //提交按钮状态（颜色）
-    url:'https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/like.png',
+    url: 'https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/like.png',
     url1: 'https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/likeAct.png',
     show: false,
     s2: true,
@@ -134,6 +212,9 @@ Page({
   },
   refresh: function (e) {
     var that = this;
+    this.setData({
+      loading: true
+    })
     if (that.data.current == 0) {
       var pagecount = that.data.pagecount;
       wx.showToast({
@@ -151,6 +232,9 @@ Page({
             pagesize: "20",
           },
           success: function (res) {
+            this.setData({
+              loading: false
+            })
             if (res.Data) {
               pagecount = pagecount + 1;
               var length = that.data.list.length;
@@ -206,6 +290,11 @@ Page({
         });
       }, 1000);
     }
+    setTimeout(() => {
+      this.setData({
+        loading: false
+      })
+    }, 1600)
   },
   hijiancha: function (faultDate, completeTime) {
     var stime = Date.parse(new Date(faultDate));
@@ -233,7 +322,9 @@ Page({
       triggered: false,
     });
     console.log(this.hijiancha(app.reply_time, time));
-    this.setData({ msgtime: this.hijiancha(app.reply_time, time) });
+    this.setData({
+      msgtime: this.hijiancha(app.reply_time, time)
+    });
     var that = this;
     wx.request({
       url: "https://abc.mmyxyz.xyz/msg/list",
@@ -274,7 +365,7 @@ Page({
       },
     });
   },
-  function() {
+  function () {
     var _this = this;
     wx.request({
       url: "https://abc.mmyxyz.xyz/msg/add",
@@ -347,8 +438,8 @@ Page({
         success: function (res) {
           if (res.confirm) {
             wx.switchTab({
-              url: "/pages/information/information",
-            }),
+                url: "/pages/information/information",
+              }),
               console.log("弹框后点取消");
           } else {
             console.log("弹框后点取消");
@@ -369,7 +460,9 @@ Page({
             title: "星火民大，点亮中华",
             content: "你在十分钟前就已经评论过了!",
             success: function (res) {
-              that.setData({ comment: "" });
+              that.setData({
+                comment: ""
+              });
             },
           });
         } else {
@@ -419,18 +512,18 @@ Page({
                       },
                     });
                     wx.request({
-                      url: "https://abc.mmyxyz.xyz/msg/list",
-                      data: {
-                        type: "well",
-                        pages: "1",
-                        pagesize: "20",
-                      },
-                      success: function (res) {
-                        that.setData({
-                          list: res.data.Data,
-                        });
-                      },
-                    }),
+                        url: "https://abc.mmyxyz.xyz/msg/list",
+                        data: {
+                          type: "well",
+                          pages: "1",
+                          pagesize: "20",
+                        },
+                        success: function (res) {
+                          that.setData({
+                            list: res.data.Data,
+                          });
+                        },
+                      }),
                       wx.request({
                         url: "https://abc.mmyxyz.xyz/msg/list",
                         data: {
@@ -468,10 +561,14 @@ Page({
   },
   onReachBottom: function () {},
   f1() {
-    this.setData({ current: 0 });
+    this.setData({
+      current: 0
+    });
   },
   f2() {
-    this.setData({ current: 1 });
+    this.setData({
+      current: 1
+    });
   },
 
   /**
@@ -545,8 +642,8 @@ Page({
       }
       if (a == 1 && this.data.imgurl1[id].in == 0) {
         this.setData({
-          [`imgurl1[${id}].in`]: 1,
-        }),
+            [`imgurl1[${id}].in`]: 1,
+          }),
           wx.showToast({
             title: "您已成功点赞",
           }),

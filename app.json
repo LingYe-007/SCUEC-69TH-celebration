@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/information/information",
     "pages/liuyan/liuyan",
+    "pages/information/information",
     "pages/home/home",
     "pages/zhuye/zhuye",
     "pages/contact/contact",

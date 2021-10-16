@@ -223,6 +223,27 @@ text {
   top: 6vh;
   left: 21vw;
 }
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.loading>image{
+  width:30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+  animation: rotate 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
 picker {
   width: 100vw;
 }

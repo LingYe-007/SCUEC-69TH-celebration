@@ -2,7 +2,8 @@
 <tabbar activeIdx="{{activeIdx}}" wx:if="{{s2}}"></tabbar>
 <view class='ta1'>
   <text>星火民大，点亮中华</text>
-  <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/home.png" style="height:7vw;width:7vw;top:6vh;position:fixed;left:6.8vw" bindtap="goback">
+  <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/home.png"
+    style="height:7vw;width:7vw;top:6vh;position:fixed;left:6.8vw" bindtap="goback">
   </image>
 </view>
 <view class="tabbar1">
@@ -18,6 +19,10 @@
       <view>刷新成功.....</view>
     </view>
     <view class="content">
+      <view class="loading" wx:if="{{loading}}">
+      <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/loading.png" alt=""/>
+      <p>加载更多中</p>
+      </view>
       <block wx:for="{{current==0?list:list1}}" style="display:flex" class="liuinf" wx:key="index">
         <view class="message_container">
           <view class="cl" style="background-color:{{item1[item.college].value}}">{{item1[item.college].name}}</view>
