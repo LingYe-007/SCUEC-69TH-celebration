@@ -257,8 +257,8 @@ Page({
     if (that.data.current != 0) {
       var pagecount1 = that.data.pagecount1;
       wx.showToast({
-        title: "加载更多成功",
-        icon: "none",
+        title: "加载更多中",
+        icon: "loading",
       });
       console.log(pagecount1);
       setTimeout(function () {
@@ -298,9 +298,7 @@ Page({
   },
   hijiancha: function (faultDate, completeTime) {
     var stime = Date.parse(new Date(faultDate));
-
     var etime = Date.parse(new Date(completeTime));
-
     var usedTime = etime - stime; //两个时间戳相差的毫秒数
 
     return usedTime;

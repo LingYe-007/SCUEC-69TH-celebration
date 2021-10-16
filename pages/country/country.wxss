@@ -1,60 +1,72 @@
 /* pages/country/country.wxss */
-page{background-color: rgb(255,255,255);}
+page {
+    background-color: rgb(255, 255, 255);
+}
+
 .cityBox {
     padding: 0 5rpx;
     display: flex;
-    justify-content:row;
+    justify-content: row;
 }
- .c1{background-color: rgb(245,245,245);}
-.search-city{
+
+.c1 {
+    background-color: rgb(245, 245, 245);
+}
+
+.search-city {
     width: 100%;
     height: 10vh;
-    position:absolute;
+    position: absolute;
     top: 20rpx;
     display: flex;
     flex-direction: row;
 }
- 
-.content{
+
+.content {
     margin-top: 90rpx;
     width: 100%;
-    
+
 }
-.ct{border-bottom: 1rpx solid rgb(245,245,245);padding-bottom: 2vh;}
+
+.ct {
+    border-bottom: 1rpx solid rgb(245, 245, 245);
+    padding-bottom: 2vh;
+}
+
 .city-scroll {
-    left: 0;
+    left: 20rpx;
     position: fixed;
     height: 100%;
     width: 720rpx;
 }
- 
-.search-nav{
+
+.search-nav {
     width: 8vw;
     position: fixed;
     top: 120rpx;
     bottom: 5rpx;
     right: 5rpx;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
- 
-.search-nav text{
+
+.search-nav text {
     text-align: center;
     font-size: 24rpx;
 }
- 
-.search-city input{
+
+.search-city input {
     height: 50rpx;
     line-height: 50rpx;
-    border:1rpx solid rgb(245,245,245);
+    border: 1rpx solid rgb(245, 245, 245);
     border-radius: 10rpx;
     width: 80%;
     color: #000;
     font-size: 32rpx;
 }
- 
-.search-city button{
+
+.search-city button {
     margin-top: 3rpx;
     margin-right: 20rpx;
     border: none;
@@ -65,26 +77,35 @@ page{background-color: rgb(255,255,255);}
     line-height: 50rpx;
     background-color: #ece5dc;
 }
-.city::before{position: absolute; width: 100vw;top:5vh;content:"";height: 20vh;}
-.city{
+
+.city::before {
+    position: absolute;
+    width: 100vw;
+    top: 5vh;
+    content: "";
+    height: 20vh;
+}
+
+.city {
     background-clip: padding-box;
     width: 100vw;
     font-size: 24rpx;
     padding-bottom: 10rpx;
-    border-bottom: 1rpx solid rgb(245,245,245);
-    height:5vh;
-    background-color: rgb(255,255,255);
+    border-bottom: 1rpx solid rgb(245, 245, 245);
+    height: 5vh;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     z-index: 1000;
 }
- 
-.show-city{
+
+.show-city {
     display: flex;
     flex-direction: column;
     justify-content: left;
 }
-.show-city text{
+
+.show-city text {
     margin-top: 10rpx;
     margin-bottom: 10rpx;
     font-size: 28rpx;
