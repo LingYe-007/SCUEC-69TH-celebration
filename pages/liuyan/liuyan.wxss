@@ -227,7 +227,9 @@ text {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.5s;
+  transition:all 0.5s;
+  /* transform: translateY(-30rpx); */
+  /* opacity: 0;*/
 }
 .loading>image{
   width:30rpx;

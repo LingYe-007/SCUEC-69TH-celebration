@@ -1,6 +1,36 @@
 /* pages/contact/contact.wxss */
-page{background-image:url("http://img.nt-geek.club/xiaoyou.png");background-repeat: no-repeat;background-size:100% 100%;width: 100vw;height: 100vh;color: #79664d;}
-.title{justify-content: center;display: flex;font-weight: bolder;position: relative;top:3vh;font-size: 38rpx;font-family: Arial, Helvetica, sans-serif;}
-.content{width: 80vw;display: flex;justify-content: center;flex-direction: column;position: relative;top: 3vh;margin: 0 auto;}
-text{display: flex;justify-content: center;padding: 25rpx;font-size: 32rpx;}
-.t1{padding: 10rpx;}
+page {
+  background-image: url("https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/aboutus.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh;
+  color: #79664d;
+}
+.title {
+  justify-content: center;
+  display: flex;
+  font-weight: bolder;
+  position: relative;
+  top: 3vh;
+  font-size: 38rpx;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.content {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 3vh;
+  margin: 0 auto;
+}
+text {
+  display: flex;
+  justify-content: center;
+  padding: 25rpx;
+  font-size: 32rpx;
+}
+.t1 {
+  padding: 10rpx;
+}

@@ -79,8 +79,9 @@ page {
   height: 20vw;
 }
 #gif {
-  position: fixed;
-  left: 35.3vw;
+  /* position: fixed;
+  left: 35vw; */
+  margin: 0 auto;
   z-index: 901;
 }
 .hah {
@@ -154,6 +155,7 @@ page {
   padding: 0px;
   padding-left: 15px;
   padding-right: 15px;
+  margin: 10rpx;
   background-color: rgba(255, 255, 255, 0.5);
 }
 /**定义从右边向左边的移动的动画**/

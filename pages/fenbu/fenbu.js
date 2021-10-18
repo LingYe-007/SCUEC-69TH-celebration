@@ -85,7 +85,7 @@ else{
   onLoad: function (options) {
    var that = this;
     wx.request({
-      url: 'https://api.pomelo072.top/stars/nationlist', //接口地址    
+      url: 'https://abc.mmyxyz.xyz/stars/nationlist', //接口地址    
       
       header: {
         'content-type': 'application/json' // 默认值

@@ -221,6 +221,7 @@ class Doomm {
 
 Page({
   data: {
+    flag:0,
     is: true,
     on: true,
     value:false,
@@ -229,17 +230,17 @@ Page({
     ishide: false,
     cange: false,
     data: true,
+    top:[0,20,40,60],
     change: 1,
     scale:3,
     markers:null,
-    gurl: "https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/light.gif",
+    gurl: "https://ks3-cn-beijing.ksyuncs.com/lingye-space/asset/light.gif",
     nowLatitude_x: 30.487114,
     nowLatitude_y: 114.391799,
     doommData: [],
     doommData2: [],
-    arr2: ["小塔", "小严", "Geek组", "柚子", "小何", "吹风机", "灵野", "深巷"],
+    arr2: [ "小严", "Geek组", "柚子", "小何", "吹风机", "灵野", "深巷"],
     arr: [
-      "祝最爱的民大69岁生日快乐！",
       "点完星就去吃碗一块三的热干面！",
       "程序猿头都快都秃了",
       "希望大家喜欢这个小程序～",
@@ -300,7 +301,7 @@ Page({
     // 对实例进行设置
     this.back.src =
       "https://img.nt-geek.club/%E8%B5%84%E8%AE%AF%E6%B0%91%E5%A4%A7%20-%20%E4%B8%AD%E5%8D%97%E6%B0%91%E5%A4%A767%E5%91%A8%E5%B9%B4%E5%BA%86%E7%94%9F%E7%89%88%C2%B7%E3%80%8A%E5%8F%AF%E8%83%BD%E5%90%A6%E3%80%8B.mp3";
-    this.back.title = "祝民大69岁生日快乐！"; // 标题为必选项
+    this.back.title = "祝民大70岁生日快乐！"; // 标题为必选项
     this.back.coverImgUrl =
       "https://img.nt-geek.club/%E9%9F%B3%E4%B9%90%E5%B0%81%E9%9D%A2%20%283%29.jpg";
     this.back.play(), // 开始播放
@@ -468,7 +469,10 @@ Page({
       });
     }, 17000);
 
+    var flag = 0 
     cycle = setInterval(function () {
+      console.log(flag)
+      flag = 0
       if (arr[ids] == undefined) {
         ids = 0;
         // 1.循环一次，清除计时器
@@ -477,9 +481,18 @@ Page({
 
         // 2.无限循环弹幕
         doommList.push(
-          new Doomm(arr2[ids], arr[ids], Math.ceil(Math.random() * 60), 10)
+          new Doomm(arr2[ids], arr[ids], that.data.top[flag], 11)
         );
-        if (doommList.length > 5) {
+        doommList.push(
+          new Doomm(arr2[ids+1], arr[ids+1], that.data.top[flag+1], 10)
+        )
+        doommList.push(
+          new Doomm(arr2[ids+2], arr[ids+2], that.data.top[flag+2], 9)
+        )
+        doommList.push(
+          new Doomm(arr2[ids+3], arr[ids+3], that.data.top[flag+3], 12)
+        )
+        if (doommList.length > 10) {
           //删除运行过后的dom
           doommList.splice(0, 1);
         }
@@ -489,17 +502,26 @@ Page({
         ids++;
       } else {
         doommList.push(
-          new Doomm(arr2[ids], arr[ids], Math.ceil(Math.random() * 60), 10)
+          new Doomm(arr2[ids], arr[ids], that.data.top[flag], 11)
         );
-        if (doommList.length > 5) {
+        doommList.push(
+          new Doomm(arr2[ids+1], arr[ids+1], that.data.top[flag+1], 10)
+        )
+        doommList.push(
+          new Doomm(arr2[ids+2], arr[ids+2], that.data.top[flag+2], 9)
+        )
+        doommList.push(
+          new Doomm(arr2[ids+3], arr[ids+3], that.data.top[flag+3], 12)
+        )
+        if (doommList.length > 10) {
           doommList.splice(0, 1);
         }
         that.setData({
           doommData: doommList,
         });
-        ids++;
+        ids= ids+4;
       }
-    }, 3910);
+    }, 4000);
     console.log("zhixing");
   },
 });

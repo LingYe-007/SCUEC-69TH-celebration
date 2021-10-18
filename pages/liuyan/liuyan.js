@@ -130,6 +130,7 @@ Page({
     ],
     arr: [],
     arr1: [],
+    top:[20,60,80],
     postBtnState: false, //提交按钮状态（颜色）
     url: 'https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/like.png',
     url1: 'https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/likeAct.png',
@@ -142,9 +143,8 @@ Page({
     var that = this;
     if (that.data.current == 0) {
       var pagecount = that.data.pagecount;
-      wx.showToast({
-        title: "加载更多成功",
-        icon: "none",
+    wx.showLoading({
+        title: "下拉刷新",
       });
       console.log(pagecount);
       setTimeout(function () {
@@ -160,6 +160,7 @@ Page({
             console.log(res.Data);
             pagecount = pagecount + 1;
             var length = that.data.list.length;
+            wx.hideLoading()
             that.setData({
               list: that.data.list.concat(res.data.Data),
               pagecount: pagecount,
@@ -173,13 +174,12 @@ Page({
             }
           },
         });
-      }, 1000);
+      }, 2000);
     }
     if (that.data.current != 0) {
       var pagecount1 = that.data.pagecount1;
-      wx.showToast({
-        title: "加载更多成功",
-        icon: "none",
+      wx.showLoading({
+        title: "加载更多中",
       });
       console.log(pagecount);
       setTimeout(function () {
@@ -194,6 +194,7 @@ Page({
           success: function (res) {
             pagecount1 = pagecount1 + 1;
             var length = that.data.list1.length;
+            wx.hideLoading()
             that.setData({
               list1: that.data.list1.concat(res.data.Data),
               pagecount1: pagecount1,
@@ -217,10 +218,6 @@ Page({
     })
     if (that.data.current == 0) {
       var pagecount = that.data.pagecount;
-      wx.showToast({
-        title: "加载更多成功",
-        icon: "none",
-      });
       console.log(pagecount);
       setTimeout(function () {
         console.log("上拉刷新");
@@ -232,9 +229,6 @@ Page({
             pagesize: "20",
           },
           success: function (res) {
-            this.setData({
-              loading: false
-            })
             if (res.Data) {
               pagecount = pagecount + 1;
               var length = that.data.list.length;
@@ -256,10 +250,10 @@ Page({
     }
     if (that.data.current != 0) {
       var pagecount1 = that.data.pagecount1;
-      wx.showToast({
-        title: "加载更多中",
-        icon: "loading",
-      });
+      // wx.showToast({
+      //   title: "加载更多中",
+      //   icon: "loading",
+      // });
       console.log(pagecount1);
       setTimeout(function () {
         console.log("上拉刷新");
