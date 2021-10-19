@@ -223,11 +223,24 @@ text {
   top: 6vh;
   left: 21vw;
 }
+.isLoding{
+  /* transform: translateY(-80rpx); */
+  /* display: none !important; */
+  height: 80rpx !important ;
+  opacity: 1 !important;
+}
 .loading{
+  opacity: 0;
+  height: 0rpx ;
+  transition: ease-in-out 1s !important;
+  /* top:100px; */
   display: flex;
   align-items: center;
+  /* opacity: 1; */
   justify-content: center;
-  transition:all 0.5s;
+  /* transform: translateY(-80rpx); */
+  /* opacity: 0; */
+  transition:all ease-in 1.6s;
   /* transform: translateY(-30rpx); */
   /* opacity: 0;*/
 }

@@ -19,9 +19,9 @@
       <view>刷新成功.....</view>
     </view>
     <view class="content">
-      <view class="loading" wx:if="{{loading}}">
-      <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/loading.png" alt=""/>
-      <p>加载更多中</p>
+      <view class="{{!loading? 'loading':'loading isLoding'}}">
+        <image src="https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/loading.png" alt="" />
+        <p>加载更多中</p>
       </view>
       <block wx:for="{{current==0?list:list1}}" style="display:flex" class="liuinf" wx:key="index">
         <view class="message_container">

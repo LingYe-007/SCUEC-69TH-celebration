@@ -79,8 +79,11 @@ page {
   height: 20vw;
 }
 #gif {
-  /* position: fixed;
-  left: 35vw; */
+  height: 28.8vw;
+  width: 26.3vw;
+  position: fixed;
+  left: 38.3vw;
+  bottom: 1.8vw;
   margin: 0 auto;
   z-index: 901;
 }

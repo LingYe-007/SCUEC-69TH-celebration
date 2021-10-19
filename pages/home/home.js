@@ -227,7 +227,7 @@ Page({
     value:false,
     key: "D2QBZ-IXLKU-XLPV2-BSBRO-L7LI2-SVBMB",
     activeIdx: 1,
-    ishide: false,
+    ishide: true,
     cange: false,
     data: true,
     top:[0,20,40,60],
