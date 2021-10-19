@@ -21,8 +21,7 @@
         </view>
         <view>
             <!-- <ec-canvas id="mychart-dom-map" canvas-id="mychart" ec="{{ ecMap }}" class="map1"></ec-canvas> -->
-            <image src="{{gurl}}"class="img" id="gif"
-                wx:if="{{ishide}}" bindtap="fn"></image>
+            <image src="{{gurl}}" class="img" id="gif" wx:if="{{ishide}}" bindtap="fn"></image>
             <image src="../../images/lighted.png" class="img2" wx:if="{{cange}}"></image>
             <image src="../../images/star.png" style="width:85rpx;height:98rpx;" class="img1" bindtap="f1"
                 value="{{change}}" wx:if="{{is}}"></image>

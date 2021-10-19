@@ -80,10 +80,10 @@ page {
 }
 #gif {
   height: 28.8vw;
-  width: 26.3vw;
+  width: 27vw;
   position: fixed;
-  left: 38.3vw;
-  bottom: 1.8vw;
+  left: 38vw;
+  bottom: 1.7vw;
   margin: 0 auto;
   z-index: 901;
 }
