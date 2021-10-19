@@ -13,7 +13,7 @@
     </view>
     <button bindtap="f6" class="hah">校友分布</button>
     <map id="map" subkey="{{key}}" show-compass="{{value}}" longitude="{{nowLatitude_y}}" latitude="{{nowLatitude_x}}"
-        scale="{{scale}}" marker='{{makers}}' layer-style='2'></map>
+        scale="{{scale}}" markers='{{markers}}' layer-style='2'></map>
     <view class="map">
         <text class="t1">中南民族大学生日快乐！</text>
         <view class='music {{on? "on": ""}}'>

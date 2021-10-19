@@ -104,6 +104,8 @@ Page({
     };
     var success = function (data) {
       wxMarkerData = data.wxMarkerData;
+      app.longitude =wxMarkerData.longitude
+      app.latitude = wxMarkerData.latitude
       console.log(wxMarkerData);
     };
     let address = that.data.index.replace(/,/g,'')
@@ -214,8 +216,6 @@ Page({
                 reply_time: res.data.Data.LASTREPLY,
                 a1: 1,
               });
-              //   if(that.data.a1==1&&res.data.Data.ADDRESS==",,"){that.setData({arq:false,a1:0,country:res.data.Data.NATION})
-              // }
 
               var index = that.data.index.split(",");
               that.setData({
@@ -223,6 +223,7 @@ Page({
                 [`region[1]`]: index[1],
                 [`region[2]`]: index[2],
               });
+          
               app.college = res.data.Data.COLLEGE;
               app.star_time = res.data.Data.LASTSTAR;
               app.USERID = res.data.Data.USERID;
@@ -232,11 +233,6 @@ Page({
                 that.data.region[1].length - 1
               );
               app.reply_time = that.data.reply_time;
-              // if(that.data.index!=""&&that.data.region!=""&&that.data.userName!=""&&that.data.id!=""&&that.data.userName!=""&&that.data.id!=""){
-              //     that.setData({
-
-              //     })
-              // }
             },
           });
         }

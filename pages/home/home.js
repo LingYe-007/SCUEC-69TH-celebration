@@ -1,5 +1,6 @@
 const app = getApp();
 const util = require("../../utils/util");
+const markers = require("../../utils/map");
 
 var change = 1;
 var data = app.data3;
@@ -13,6 +14,33 @@ var ids = 0;
 var cycle = null; //计时器
 var laqushuju = null;
 var pagecount = 1;
+
+const random = (arr, num) => {
+  let temp_array = new Array();
+  for (let index in arr) {
+    temp_array.push(arr[index]);
+  }
+  // 取出的数值项,保存在此数组
+  let return_array = new Array();
+  for (let i = 0; i < num; i++) {
+    // 判断如果数组还有可以取出的元素,以防下标越界
+    if (temp_array.length > 0) {
+      // 在数组中产生一个随机索引
+      let arrIndex = Math.floor(Math.random() * temp_array.length);
+      // 将此随机索引的对应的数组元素值复制出来
+      return_array[i] = temp_array[arrIndex];
+      // 然后删掉此索引的数组元素,这时候temp_array变为新的数组
+      temp_array.splice(arrIndex, 1);
+    } else {
+      // 数组中数据项取完后,退出循环,比如数组本来只有10项,但要求取出20项.
+      break;
+    }
+  }
+  return return_array;
+};
+
+// const markers =[{id:1,cl}]
+
 // 弹幕参数
 class Doomm {
   constructor(name, text, top, time) {
@@ -28,25 +56,25 @@ class Doomm {
 
 Page({
   data: {
-    flag:0,
+    flag: 0,
     is: true,
     on: true,
-    value:false,
+    value: false,
     key: "D2QBZ-IXLKU-XLPV2-BSBRO-L7LI2-SVBMB",
     activeIdx: 1,
     ishide: true,
     cange: false,
     data: true,
-    top:[0,20,40,60],
+    top: [0, 20, 40, 60],
     change: 1,
-    scale:3,
-    markers:null,
+    scale: 3,
+    markers: null,
     gurl: "https://ks3-cn-beijing.ksyuncs.com/lingye-space/asset/light.gif",
     nowLatitude_x: 30.487114,
     nowLatitude_y: 114.391799,
     doommData: [],
     doommData2: [],
-    arr2: [ "小严", "Geek组", "柚子", "小何", "吹风机", "灵野", "深巷"],
+    arr2: ["小严", "Geek组", "柚子", "小何", "吹风机", "灵野", "深巷"],
     arr: [
       "点完星就去吃碗一块三的热干面！",
       "程序猿头都快都秃了",
@@ -80,6 +108,9 @@ Page({
   },
 
   onLoad() {
+    this.setData({
+      markers: random(markers.markers,500),
+    });
     var that = this;
     wx.request({
       url: "https://abc.mmyxyz.xyz/count/total",
@@ -271,10 +302,10 @@ Page({
       });
     }, 17000);
 
-    var flag = 0 
+    var flag = 0;
     cycle = setInterval(function () {
-      console.log(flag)
-      flag = 0
+      console.log(flag);
+      flag = 0;
       if (arr[ids] == undefined) {
         ids = 0;
         // 1.循环一次，清除计时器
@@ -282,18 +313,16 @@ Page({
         // clearInterval(cycle)
 
         // 2.无限循环弹幕
+        doommList.push(new Doomm(arr2[ids], arr[ids], that.data.top[flag], 11));
         doommList.push(
-          new Doomm(arr2[ids], arr[ids], that.data.top[flag], 11)
+          new Doomm(arr2[ids + 1], arr[ids + 1], that.data.top[flag + 1], 10)
         );
         doommList.push(
-          new Doomm(arr2[ids+1], arr[ids+1], that.data.top[flag+1], 10)
-        )
+          new Doomm(arr2[ids + 2], arr[ids + 2], that.data.top[flag + 2], 9)
+        );
         doommList.push(
-          new Doomm(arr2[ids+2], arr[ids+2], that.data.top[flag+2], 9)
-        )
-        doommList.push(
-          new Doomm(arr2[ids+3], arr[ids+3], that.data.top[flag+3], 12)
-        )
+          new Doomm(arr2[ids + 3], arr[ids + 3], that.data.top[flag + 3], 12)
+        );
         if (doommList.length > 10) {
           //删除运行过后的dom
           doommList.splice(0, 1);
@@ -303,25 +332,23 @@ Page({
         });
         ids++;
       } else {
+        doommList.push(new Doomm(arr2[ids], arr[ids], that.data.top[flag], 11));
         doommList.push(
-          new Doomm(arr2[ids], arr[ids], that.data.top[flag], 11)
+          new Doomm(arr2[ids + 1], arr[ids + 1], that.data.top[flag + 1], 10)
         );
         doommList.push(
-          new Doomm(arr2[ids+1], arr[ids+1], that.data.top[flag+1], 10)
-        )
+          new Doomm(arr2[ids + 2], arr[ids + 2], that.data.top[flag + 2], 9)
+        );
         doommList.push(
-          new Doomm(arr2[ids+2], arr[ids+2], that.data.top[flag+2], 9)
-        )
-        doommList.push(
-          new Doomm(arr2[ids+3], arr[ids+3], that.data.top[flag+3], 12)
-        )
+          new Doomm(arr2[ids + 3], arr[ids + 3], that.data.top[flag + 3], 12)
+        );
         if (doommList.length > 10) {
           doommList.splice(0, 1);
         }
         that.setData({
           doommData: doommList,
         });
-        ids= ids+4;
+        ids = ids + 4;
       }
     }, 4000);
     console.log("zhixing");
