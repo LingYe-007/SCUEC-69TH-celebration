@@ -1,6 +1,6 @@
 const app = getApp();
 const util = require("../../utils/util");
-const markers = require("../../utils/map");
+// const markers = require("../../utils/map");
 
 var change = 1;
 var data = app.data3;
@@ -62,12 +62,12 @@ Page({
     value: false,
     key: "D2QBZ-IXLKU-XLPV2-BSBRO-L7LI2-SVBMB",
     activeIdx: 1,
-    ishide: true,
+    ishide: false,
     cange: false,
     data: true,
     top: [0, 20, 40, 60],
     change: 1,
-    scale: 3,
+    scale: 3.6,
     markers: null,
     gurl: "https://ks3-cn-beijing.ksyuncs.com/lingye-space/asset/light.gif",
     nowLatitude_x: 30.487114,
@@ -79,7 +79,7 @@ Page({
       "点完星就去吃碗一块三的热干面！",
       "程序猿头都快都秃了",
       "希望大家喜欢这个小程序～",
-      "祝民大69周年生日快乐",
+      "祝民大70周年生日快乐",
       "民大生日快乐呀",
       "改完这个bug就去奖励自己",
       "秃头秃头秃头",
@@ -108,8 +108,13 @@ Page({
   },
 
   onLoad() {
-    this.setData({
-      markers: random(markers.markers,500),
+    var that = this
+    wx.request({
+      url: "https://abc.mmyxyz.xyz/stars/list",
+      success: function (res) {
+        console.log(res)
+        that.setData({ markers: res.data.Data });
+      },
     });
     var that = this;
     wx.request({
@@ -147,7 +152,7 @@ Page({
         // 对实例进行设置
         this.back.src =
           "https://img.nt-geek.club/%E8%B5%84%E8%AE%AF%E6%B0%91%E5%A4%A7%20-%20%E4%B8%AD%E5%8D%97%E6%B0%91%E5%A4%A767%E5%91%A8%E5%B9%B4%E5%BA%86%E7%94%9F%E7%89%88%C2%B7%E3%80%8A%E5%8F%AF%E8%83%BD%E5%90%A6%E3%80%8B.mp3";
-        this.back.title = "祝民大69岁生日快乐！"; // 标题为必选项
+        this.back.title = "祝民大70岁生日快乐！"; // 标题为必选项
         this.back.coverImgUrl =
           "https://img.nt-geek.club/%E9%9F%B3%E4%B9%90%E5%B0%81%E9%9D%A2%20%283%29.jpg";
         this.back.play(); // 开始播放
@@ -198,6 +203,8 @@ Page({
           data: {
             user_id: that.data.id,
             address: app.area,
+            longitude: app.longitude,
+            latitude: app.latitude,
             flag: that.data.na,
           },
           success: wx.showModal({
@@ -255,10 +262,11 @@ Page({
     });
   },
   onShow: function () {
+    var that = this
     wx.request({
       url: "https://abc.mmyxyz.xyz/stars/list",
       success: function (res) {
-        markers: res.Data;
+        that.setData({ markers: res.Data });
       },
     });
     // 获取BackgroundAudioManager 实例

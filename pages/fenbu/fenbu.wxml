@@ -1,4 +1,3 @@
-
 <!-- <view class="all">
 <view class="total">
 <text class="t1">国家/地区</text>
@@ -9,42 +8,43 @@
 
 
 
-  <view style="background-image: url('https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/country.png'); background-repeat: no-repeat;background-size:100% 100%;display: flex;align-items:Center;height:100vh;flex-direction: column;width:100vw;">
+<view
+  style="background-image: url('https://ks3-cn-beijing.ksyuncs.com/lingye-space/map/country.png'); background-repeat: no-repeat;background-size:100% 100%;display: flex;align-items:Center;height:100vh;flex-direction: column;width:100vw;">
   <view class="meiyihang" style="top:5.5vh;position:absoute;">
     <text class="wenzi1">中国</text>
     <text class="wenzi2" bindtap="f1" wx:if="{{xianshi}}"> 收起</text>
-  <text class="wenzi2" bindtap="f1" wx:else>展开 </text>
+    <text class="wenzi2" bindtap="f1" wx:else>展开 </text>
 
   </view>
-  
-<scroll-view  scroll-y="true"  style="height:25vh;position:relative;top:5vh;width: 500rpx;display:{{chinadisplay}};">
-  
-  <view  >
-  <block wx:for="{{chinalist}}" wx:if="{{xianshi}}"  wx:key="index" >
-  <view class="meiyihang">
-  
-    <text class="wenzi1">{{item.country}}</text>
-    <text class="wenzi2"> {{item.score}}</text>
 
-  </view>
- 
-</block>
-</view>
-</scroll-view>
-<scroll-view  scroll-y="true"  style="height:25vh;position:relative;top:8vh;width: 500rpx;">
-  
-  <view>
-  <block wx:for="{{otherlist}}"   wx:key="index" >
-  <view class="meiyihang">
-  
-    <text class="wenzi1">{{item.country}}</text>
-    <text class="wenzi2"> {{item.score}}</text>
+  <scroll-view scroll-y="true" style="height:25vh;position:relative;top:5vh;width: 500rpx;display:{{chinadisplay}};">
 
-  </view>
- 
-</block>
-</view>
-</scroll-view>
+    <view>
+      <block wx:for="{{chinalist}}" wx:if="{{xianshi}}" wx:key="index">
+        <view class="meiyihang">
+
+          <text class="wenzi1">{{item.country}}</text>
+          <text class="wenzi2"> {{item.score}}</text>
+
+        </view>
+
+      </block>
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y="true" style="height:25vh;position:relative;top:8vh;width: 500rpx;">
+
+    <view>
+      <block wx:for="{{otherlist}}" wx:key="index">
+        <view class="meiyihang">
+
+          <text class="wenzi1">{{item.country}}</text>
+          <text class="wenzi2"> {{item.score}}</text>
+
+        </view>
+
+      </block>
+    </view>
+  </scroll-view>
 </view>
 <!--
 <view class="meiyihang" style="top:5.5vh;">
@@ -87,6 +87,3 @@
 </view> -->
 
 <!-- <button  bindtap="f2" style="bottom:0px;position:absolute;height:40px;align-items:Center;flex-direction: column;">返回</button> -->
-
-
-  

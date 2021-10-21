@@ -102,29 +102,32 @@ Page({
     var fail = function (data) {
       console.log(data);
     };
+    let address = that.data.region.join("");
     var success = function (data) {
-      wxMarkerData = data.wxMarkerData;
-      app.longitude =wxMarkerData.longitude
-      app.latitude = wxMarkerData.latitude
-      console.log(wxMarkerData);
+      wxMarkerData = data.wxMarkerData[0];
+      console.log(data.wxMarkerData);
+      app.longitude = wxMarkerData.longitude;
+      app.latitude = wxMarkerData.latitude;
+      console.log(wxMarkerData.longitude, wxMarkerData.latitude);
+      console.log(app.longitude, app.latitude);
     };
-    let address = that.data.index.replace(/,/g,'')
+    // let address = that.data.index.replace(/,/g,'')
     BMap.geocoding({
-      address:address,
-      fail:fail,
-      success:success
+      address: address,
+      fail: fail,
+      success: success,
     });
     var that = this;
     console.log(that.data.college == "");
     console.log(that.data.region[0] == "");
     if (
-      (that.data.college != "" &&
-        that.data.region[0] != "" &&
-        that.data.userName != "" &&
-        that.data.id != "" &&
+      (that.data.college !== "" &&
+        that.data.region[0] !== "" &&
+        that.data.userName !== "" &&
+        that.data.id !== "" &&
         that.data.country == "中国") ||
-      (that.data.college != "" &&
-        that.data.country != "中国" &&
+      (that.data.college !== "" &&
+        that.data.country !== "中国" &&
         that.data.userName != "" &&
         that.data.id != "")
     ) {
@@ -223,7 +226,24 @@ Page({
                 [`region[1]`]: index[1],
                 [`region[2]`]: index[2],
               });
-          
+              var BMap = new bmap.BMapWX({
+                ak: "ngH82UfC9ct0UHNQcTZFsH62KcnDiaBw",
+              });
+              var fail = function (data) {
+                console.log(data);
+              };
+              var success = function (data) {
+                wxMarkerData = data.wxMarkerData[0];
+                console.log(data.wxMarkerData);
+                app.longitude = wxMarkerData.longitude;
+                app.latitude = wxMarkerData.latitude;
+              };
+              // let address = that.data.index.replace(/,/g,'')
+              BMap.geocoding({
+                address: index,
+                fail: fail,
+                success: success,
+              });
               app.college = res.data.Data.COLLEGE;
               app.star_time = res.data.Data.LASTSTAR;
               app.USERID = res.data.Data.USERID;
@@ -238,6 +258,7 @@ Page({
         }
       },
     });
+
     // wx.request({
     //   url: 'https://abc.mmyxyz.xyz/personal/info',
     //     data:{

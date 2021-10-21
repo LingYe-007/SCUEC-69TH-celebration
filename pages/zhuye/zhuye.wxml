@@ -1,7 +1,4 @@
 <!--pages/zhuye/zhuye.wxml-->
-<!-- <view class='ta1'>
-  <text>中南民族大学69周年快乐！</text>
-  <!-- <image src="../../images/home.png" style="height:7vw;width:7vw;top:6vh;position:fixed;left:3vw" bindtap="goback"></image> -->
 <view class="cr">
   <button class="button1" bindtap="f1" hover-class="bg_color">民大专属头像</button>
   <button class="button2" bindtap="f2" hover-class="bg_color">星火民大2021</button>
