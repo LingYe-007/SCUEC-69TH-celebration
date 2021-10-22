@@ -53,7 +53,6 @@ Page({
 			cityList:cityList.cityList,
 			searchNav:searchNav
 		})
-		console.log(this.data.cityList)
 	},
 	// 获取城市名称以及数据索引
 
@@ -110,9 +109,7 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
- 
 	},
- 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
@@ -120,7 +117,6 @@ Page({
  
 	},
 	set1:function(e){
-		console.log(e.currentTarget.id)
 		this.setData({
 			searchValue:e.currentTarget.id
 		})

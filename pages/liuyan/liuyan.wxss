@@ -240,7 +240,7 @@ text {
   justify-content: center;
   /* transform: translateY(-80rpx); */
   /* opacity: 0; */
-  transition:all ease-in 1.6s;
+  transition:all ease-in 1s;
   /* transform: translateY(-30rpx); */
   /* opacity: 0;*/
 }

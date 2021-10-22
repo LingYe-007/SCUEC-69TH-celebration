@@ -218,9 +218,7 @@ Page({
     })
     if (that.data.current == 0) {
       var pagecount = that.data.pagecount;
-      console.log(pagecount);
       setTimeout(function () {
-        console.log("上拉刷新");
         wx.request({
           url: "https://abc.mmyxyz.xyz/msg/list",
           data: {
@@ -250,13 +248,7 @@ Page({
     }
     if (that.data.current != 0) {
       var pagecount1 = that.data.pagecount1;
-      // wx.showToast({
-      //   title: "加载更多中",
-      //   icon: "loading",
-      // });
-      console.log(pagecount1);
       setTimeout(function () {
-        console.log("上拉刷新");
         wx.request({
           url: "https://abc.mmyxyz.xyz/msg/list",
           data: {
@@ -305,15 +297,12 @@ Page({
     var time = util.formatTime(new Date());
     time = time.slice(5, time.length - 3);
     time = time.replace("/", "-");
-    console.log(time);
-    console.log(app.reply_time);
     var that = this;
     var date = new Date();
     this.setData({
       refreshTime: date.toLocaleTimeString(),
       triggered: false,
     });
-    console.log(this.hijiancha(app.reply_time, time));
     this.setData({
       msgtime: this.hijiancha(app.reply_time, time)
     });
@@ -353,21 +342,6 @@ Page({
               });
             }
           },
-        });
-      },
-    });
-  },
-  function () {
-    var _this = this;
-    wx.request({
-      url: "https://abc.mmyxyz.xyz/msg/add",
-      method: "POST",
-      header: {
-        "content-type": "application/json",
-      },
-      success: function (res) {
-        self.setdata({
-          proList: res.data,
         });
       },
     });
@@ -596,7 +570,6 @@ Page({
   f5(e) {
     var id = e.currentTarget.dataset.id;
     var that = this;
-    let arr = that.data.arr;
     let a = that.data.current;
     console.log(a);
     if (app.USERID == "") {
@@ -663,7 +636,6 @@ Page({
 });
 onReachBottom: {
   wx.showNavigationBarLoading();
-
   setTimeout(function () {
     // complete
     wx.hideNavigationBarLoading(); //完成停止加载

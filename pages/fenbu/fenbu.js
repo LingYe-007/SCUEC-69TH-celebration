@@ -40,7 +40,6 @@ Page({
   },
   f3() {
     var that = this;
-    console.log("aaaaa");
     if (that.data.meiguo == false) {
       that.setData({
         meiguo: true,

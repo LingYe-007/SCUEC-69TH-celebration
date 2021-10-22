@@ -52,6 +52,7 @@ Page({
     this.setData({
       college: e.detail.value,
     });
+    app.college = e.detail.value
   },
   storage: function (e) {
     this.setData({
@@ -59,14 +60,19 @@ Page({
     });
     if (this.data.userName.length > 8) {
       wx.showToast({
-        title: "名字不得超过8个字",
-        icon: "none",
-      }),
-        this.setData({ userName: "" });
+          title: "名字不得超过8个字",
+          icon: "none",
+        }),
+        this.setData({
+          userName: ""
+        });
     }
   },
   uNumber(e) {
-    this.setData({ usernumber: e.detail.value });
+    this.setData({
+      usernumber: e.detail.value
+    });
+    app.usernumber = e.detail.value
   },
   gifImgLoad(e) {
     var gifurl = this.data.gifUrl;
@@ -78,7 +84,10 @@ Page({
     }, 1000);
   },
   changeRegin(e) {
-    this.setData({ region: e.detail.value });
+    this.setData({
+      region: e.detail.value
+    });
+    app.region = e.detail.value
   },
   /**
    * 生命周期函数--监听页面加载
@@ -101,25 +110,22 @@ Page({
     });
     var fail = function (data) {
       console.log(data);
+      app.longitude=''
+      app.latitude=''
     };
-    let address = that.data.region.join("");
+    let address = that.data.region[0] + that.data.region[1];
     var success = function (data) {
       wxMarkerData = data.wxMarkerData[0];
-      console.log(data.wxMarkerData);
       app.longitude = wxMarkerData.longitude;
       app.latitude = wxMarkerData.latitude;
-      console.log(wxMarkerData.longitude, wxMarkerData.latitude);
-      console.log(app.longitude, app.latitude);
+      console.log(app.longitude, app.latitude)
     };
-    // let address = that.data.index.replace(/,/g,'')
     BMap.geocoding({
       address: address,
       fail: fail,
       success: success,
     });
     var that = this;
-    console.log(that.data.college == "");
-    console.log(that.data.region[0] == "");
     if (
       (that.data.college !== "" &&
         that.data.region[0] !== "" &&
@@ -149,8 +155,8 @@ Page({
             success: function (res) {
               if (res.confirm) {
                 wx.switchTab({
-                  url: "/pages/home/home",
-                }),
+                    url: "/pages/home/home",
+                  }),
                   console.log("弹框后点取消");
               } else {
                 console.log("弹框后点取消");
@@ -195,7 +201,9 @@ Page({
         wx.request({
           url: "https://abc.mmyxyz.xyz/stars/list",
           success: function (res) {
-            that.setData({ data3: res.data.Data });
+            that.setData({
+              data3: res.data.Data
+            });
             app.data3 = that.data.data3;
           },
         });
@@ -207,7 +215,6 @@ Page({
               code: res.code,
             },
             success: function (res) {
-              console.log(res.data.Data.LASTREPLY);
               that.setData({
                 list: res.data,
                 id: res.data.Data.USERID,
@@ -231,6 +238,8 @@ Page({
               });
               var fail = function (data) {
                 console.log(data);
+                app.latitude = ''
+                app.longitude = ''
               };
               var success = function (data) {
                 wxMarkerData = data.wxMarkerData[0];
@@ -240,7 +249,7 @@ Page({
               };
               // let address = that.data.index.replace(/,/g,'')
               BMap.geocoding({
-                address: index,
+                address: that.data.region[0] + that.data.region[1],
                 fail: fail,
                 success: success,
               });
@@ -258,27 +267,6 @@ Page({
         }
       },
     });
-
-    // wx.request({
-    //   url: 'https://abc.mmyxyz.xyz/personal/info',
-    //     data:{
-    //     user_id:that.data.id
-    //   },
-    //   success(res){
-    //     console.log(res)
-    //     if(res.data.Data)
-    //     that.setData({
-    //         usernumber:res.data.Data.NAME,
-    //         college:res.data.Data.COLLEGE,
-    //         region:res.data.Data.ADDRESS,
-    //         userName:res.data.Data.NAME
-    //     })
-    //     app.username=that.data.Data.NAME;
-    //     app.change=2;
-    //     app.USERID=that.data.id;
-    //     app.area=that.data.region[1].slice(0,that.data.region[1].length-1)
-    //   }
-    // })
   },
   /**
    * 生命周期函数--监听页面显示

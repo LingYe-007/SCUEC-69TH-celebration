@@ -2,12 +2,7 @@ const app = getApp();
 const util = require("../../utils/util");
 // const markers = require("../../utils/map");
 
-var change = 1;
-var data = app.data3;
-var xx = "2";
-
 //index.js
-var that = undefined;
 var doommList = [];
 var i = 0;
 var ids = 0;
@@ -38,8 +33,6 @@ const random = (arr, num) => {
   }
   return return_array;
 };
-
-// const markers =[{id:1,cl}]
 
 // 弹幕参数
 class Doomm {
@@ -87,7 +80,9 @@ Page({
   },
   stop() {
     this.back.pause(); // 点击音乐图标后出发的操作
-    this.setData({ on: !this.data.on });
+    this.setData({
+      on: !this.data.on
+    });
     if (this.data.on) {
       this.back.play();
     } else {
@@ -112,19 +107,19 @@ Page({
     wx.request({
       url: "https://abc.mmyxyz.xyz/stars/list",
       success: function (res) {
-        for(let i=0;i<res.data.Data.length;i++){
-          res.data.Data[i].width=30
-          res.data.Data[i].height=30
-        }
-        console.log(res.data.Data)
-        that.setData({ markers: res.data.Data });
+        console.log('markers', res.data.Data)
+        that.setData({
+          markers: res.data.Data
+        });
       },
     });
     var that = this;
     wx.request({
       url: "https://abc.mmyxyz.xyz/count/total",
       success: function (res) {
-        that.setData({ total: res.data.Data.Star });
+        that.setData({
+          total: res.data.Data.Star
+        });
       },
     });
     var date = util.formatDate(new Date());
@@ -177,8 +172,8 @@ Page({
           success: function (res) {
             if (res.confirm) {
               wx.switchTab({
-                url: "/pages/information/information",
-              }),
+                  url: "/pages/information/information",
+                }),
                 console.log("弹框后点取消");
             } else {
               console.log("弹框后点取消");
@@ -190,9 +185,14 @@ Page({
       case 2: {
         var area = app.area;
         if (app.country == "中国") {
-          that.setData({ na: 1 });
+          that.setData({
+            na: 1
+          });
         } else {
-          that.setData({ na: 0, area: app.country }), (app.area = app.country);
+          that.setData({
+            na: 0,
+            area: app.country
+          }), (app.area = app.country);
         }
         that.setData({
           ishide: true,
@@ -204,31 +204,30 @@ Page({
           url: "https://abc.mmyxyz.xyz/stars/light",
           data: {
             user_id: that.data.id,
-            address: app.area,
+            address: app.area ? app.area : app.country,
             longitude: app.longitude,
             latitude: app.latitude,
             flag: that.data.na,
           },
-          success:(res)=>{
+          success: (res) => {
             wx.request({
               url: "https://abc.mmyxyz.xyz/stars/list",
               success: function (res) {
-                for(let i=0;i<res.data.Data.length;i++){
-                  res.data.Data[i].width=30
-                  res.data.Data[i].height=30
-                }
                 console.log(res.data.Data)
-                that.setData({ markers: res.data.Data,total:that.data.total+1 });
+                that.setData({
+                  markers: res.data.Data,
+                  total: that.data.total + 1
+                });
                 wx.showModal({
                   showCancel: false,
                   title: "星火民大，点亮中华",
-                  content: "你已经为" + area + "点亮星星",
+                  content: `你已经为${app.area?app.area:app.country}点亮星星`,
                 })
               },
             });
           }
         });
-        
+
         break;
       }
       case 3: {
@@ -282,7 +281,9 @@ Page({
     wx.request({
       url: "https://abc.mmyxyz.xyz/stars/list",
       success: function (res) {
-        that.setData({ markers: res.Data });
+        that.setData({
+          markers: res.data.Data
+        });
       },
     });
     // 获取BackgroundAudioManager 实例
