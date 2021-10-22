@@ -112,7 +112,11 @@ Page({
     wx.request({
       url: "https://abc.mmyxyz.xyz/stars/list",
       success: function (res) {
-        console.log(res)
+        for(let i=0;i<res.data.Data.length;i++){
+          res.data.Data[i].width=30
+          res.data.Data[i].height=30
+        }
+        console.log(res.data.Data)
         that.setData({ markers: res.data.Data });
       },
     });
@@ -196,8 +200,6 @@ Page({
           id: app.USERID,
           area: app.area,
         });
-        console.log(that.data.na);
-        console.log(app.area);
         wx.request({
           url: "https://abc.mmyxyz.xyz/stars/light",
           data: {
@@ -207,12 +209,26 @@ Page({
             latitude: app.latitude,
             flag: that.data.na,
           },
-          success: wx.showModal({
-            showCancel: false,
-            title: "星火民大，点亮中华",
-            content: "你已经为" + area + "点亮星星",
-          }),
+          success:(res)=>{
+            wx.request({
+              url: "https://abc.mmyxyz.xyz/stars/list",
+              success: function (res) {
+                for(let i=0;i<res.data.Data.length;i++){
+                  res.data.Data[i].width=30
+                  res.data.Data[i].height=30
+                }
+                console.log(res.data.Data)
+                that.setData({ markers: res.data.Data,total:that.data.total+1 });
+                wx.showModal({
+                  showCancel: false,
+                  title: "星火民大，点亮中华",
+                  content: "你已经为" + area + "点亮星星",
+                })
+              },
+            });
+          }
         });
+        
         break;
       }
       case 3: {
